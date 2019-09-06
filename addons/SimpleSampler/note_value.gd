@@ -30,3 +30,12 @@ func get_note_value(tone: String, octave: int = 4) -> int:
   if value != null:
     return value + 12 * octave
   return 0
+
+func get_note_name(value: int) -> String:
+  var notes := note_values.keys()
+  var values := note_values.values()
+  var index: int = values.find(value % 12)
+  return notes[index]
+
+func get_note_octave(value: int) -> int:
+  return value / 12

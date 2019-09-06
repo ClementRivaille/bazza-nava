@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://addons/SimpleSampler/multisampler.gd" type="Script" id=2]
@@ -8,7 +8,8 @@
 [ext_resource path="res://addons/SimpleSampler/samples/synth/E4.tres" type="Resource" id=6]
 [ext_resource path="res://addons/SimpleSampler/samples/synth/E5.tres" type="Resource" id=7]
 [ext_resource path="res://addons/SimpleSampler/samples/synth/G#4.tres" type="Resource" id=8]
-[ext_resource path="res://addons/SimpleSampler/sampler.gd" type="Script" id=9]
+[ext_resource path="res://scenes/instruments/TestSynth.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=10]
 
 [node name="Main" type="Spatial"]
 script = ExtResource( 1 )
@@ -21,9 +22,7 @@ __meta__ = {
 samples = [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ]
 max_notes = 3
 
-[node name="Sampler" type="AudioStreamPlayer" parent="."]
-script = ExtResource( 9 )
-__meta__ = {
-"_editor_icon": ExtResource( 3 )
-}
-samples = [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ]
+[node name="Sampler" parent="." instance=ExtResource( 9 )]
+
+[node name="Player" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.93512, -1.0951, -4.56977 )

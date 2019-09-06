@@ -16,7 +16,7 @@
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="multisampler_icon.svg"
-   inkscape:export-filename="/home/clement/Developpement/Bazza Nava/addons/SimpleSampler/sample_icon.png"
+   inkscape:export-filename="/home/clement/Developpement/Bazza Nava/addons/SimpleSampler/multisampler_icon.png"
    inkscape:export-xdpi="2.4000001"
    inkscape:export-ydpi="2.4000001">
   <defs
@@ -159,9 +159,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="427.87064"
-     inkscape:cy="341.61836"
+     inkscape:zoom="0.24748737"
+     inkscape:cx="531.53245"
+     inkscape:cy="155.24703"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"

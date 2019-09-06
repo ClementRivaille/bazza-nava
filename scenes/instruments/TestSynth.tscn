@@ -1,0 +1,16 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://addons/SimpleSampler/sampler.gd" type="Script" id=1]
+[ext_resource path="res://addons/SimpleSampler/sampler_icon.png" type="Texture" id=2]
+[ext_resource path="res://addons/SimpleSampler/samples/synth/B4.tres" type="Resource" id=3]
+[ext_resource path="res://addons/SimpleSampler/samples/synth/C#5.tres" type="Resource" id=4]
+[ext_resource path="res://addons/SimpleSampler/samples/synth/E4.tres" type="Resource" id=5]
+[ext_resource path="res://addons/SimpleSampler/samples/synth/E5.tres" type="Resource" id=6]
+[ext_resource path="res://addons/SimpleSampler/samples/synth/G#4.tres" type="Resource" id=7]
+
+[node name="Sampler" type="AudioStreamPlayer"]
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+samples = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ]
