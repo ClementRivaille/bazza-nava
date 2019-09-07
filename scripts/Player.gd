@@ -60,7 +60,7 @@ func _get_random_note() -> int:
 
 func play_random_note():
   var r_note := _get_random_note()
-  var noteValue := musicTheory.calculate_note_value(currentBase, 4, currentScale, r_note)
+  var noteValue := musicTheory.calculate_note_value(currentBase, 3, currentScale, r_note)
   
   var note_name := calculator.get_note_name(noteValue)
   var octave := calculator.get_note_octave(noteValue)
