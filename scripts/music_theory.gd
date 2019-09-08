@@ -1,7 +1,8 @@
 extends Node
 class_name MusicTheory
 
-enum Scale {MAJOR = 0,
+enum Scale {
+  MAJOR = 0,
   DORIAN = 1,
   PHRYGIAN = 2,
   LYDIAN = 3,

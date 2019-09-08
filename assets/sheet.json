@@ -1,0 +1,41 @@
+{
+  "scale": {
+    "note": "A",
+    "mode": "LYDIAN"
+  },
+  "measures": [
+    {
+      "measure": 2,
+      "chord": 0
+    },
+    {
+      "measure": 3,
+      "chord": 1
+    },
+    {
+      "measure": 2,
+      "chord": 0
+    },
+    {
+      "measure": 3,
+      "chord": 1
+    },
+    {
+      "measure": 2,
+      "chord": 0
+    },
+    {
+      "measure": 3,
+      "chord": 1
+    },
+    {
+      "measure": 2,
+      "chord": 0
+    },
+    {
+      "measure": 3,
+      "chord": 1
+    }
+  ]
+}
+
