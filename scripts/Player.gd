@@ -40,7 +40,7 @@ func _ready():
   musicTheory = get_node("/root/MusicTheory")
   calculator = get_node("/root/NoteValue")
 
-func setHarmony(base: String, scale: int):
+func set_harmony(base: String, scale: int):
   currentBase = base
   currentScale = scale
 
