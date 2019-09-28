@@ -3,69 +3,69 @@
     "note": "A",
     "mode": "LYDIAN"
   },
-  "measures": [
+  "sections": [
     {
-      "measure": 2,
+      "measures": 3,
       "chord": 0
     },
     {
-      "measure": 3,
+      "measures": 1,
       "chord": 1
     },
     {
-      "measure": 4,
+      "measures": 1,
       "chord": 0
     },
     {
-      "measure": 5,
+      "measures": 1,
       "chord": 1
     },
     {
-      "measure": 6,
+      "measures": 1,
       "chord": 0
     },
     {
-      "measure": 7,
+      "measures": 1,
       "chord": 1
     },
     {
-      "measure": 8,
+      "measures": 1,
       "chord": 0
     },
     {
-      "measure": 9,
+      "measures": 1,
       "chord": 1
     },
     {
-      "measure": 10,
+      "measures": 1,
       "chord": 5
     },
     {
-      "measure": 11,
+      "measures": 1,
       "chord": 6
     },
     {
-      "measure": 12,
+      "measures": 1,
       "chord": 5
     },
     {
-      "measure": 13,
+      "measures": 1,
       "chord": 6
     },
     {
-      "measure": 14,
+      "measures": 1,
       "chord": 5
     },
     {
-      "measure": 15,
+      "measures": 1,
       "chord": 6
     },
     {
-      "measure": 16,
+      "measures": 1,
       "chord": 5
     },
     {
-      "measure": 17,
+      "measures": 1,
       "chord": 6
     }
   ]

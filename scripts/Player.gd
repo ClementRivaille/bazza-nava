@@ -14,7 +14,7 @@ var calculator: NoteValueCalculator
 var probabilities: Array = [
   {
     "keys": [0, 7],
-    "value": 0.15
+    "value": 0.3
   },
   {
     "keys": [2],

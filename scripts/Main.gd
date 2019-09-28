@@ -14,8 +14,8 @@ var idx :=0
 var sheet: MusicSheet
 var sheet_path := "res://assets/sheet.json"
 
-var current_measure := 0
-var current_beat := 0
+var measures_left := 0
+var beats_left := 0
 
 
 func _ready():
@@ -34,34 +34,45 @@ func _input(event: InputEvent):
     
 func start_song():
   get_tree().call_group("player", "set_harmony", sheet.root, sheet.mode)
-  current_measure = 0
-  current_beat = 0
+  sheet.restart()
   metronome.play()
   
-func on_measure():
-  current_measure += 1
+  read_next_section()
+  
+func read_next_section():
   var next := sheet.get_next_section()
-  if (next.measure == current_measure):
-    var new_mode := sheet.mode
-    var new_root := sheet.root
+  var new_mode := sheet.mode
+  var new_root := sheet.root
+  print(next.chord)
 
-    if (next.mode != null):
-      new_mode = sheet.mode
+  if (next.mode != null):
+    new_mode = sheet.mode
+  
+  if (next.chord != null):
+    var new_root_value: int = music_theory.calculate_note_value(
+      new_root, 4,
+      new_mode, next.chord)
+    new_root = calculator.get_note_name(new_root_value)
+    new_mode = (new_mode + next.chord) % music_theory.scales_intervals.size()
     
-    if (next.chord != null):
-      var new_root_value: int = music_theory.calculate_note_value(
-        new_root, 4,
-        new_mode, next.chord)
-      new_root = calculator.get_note_name(new_root_value)
-      new_mode = (new_mode + next.chord) % music_theory.scales_intervals.size()
-      
-    get_tree().call_group("player", "set_harmony", new_root, new_mode)
-    
-    sheet.change_section()
+  get_tree().call_group("player", "set_harmony", new_root, new_mode)
+  
+  measures_left = next.measures
+  beats_left = next.beats
+  sheet.change_section()
+
+  
+func on_measure():
+  measures_left -= 1
+  if (measures_left <= 0 && beats_left <= 0):
+    read_next_section()
 
 func on_beat(n: int):
   player.play_random_note()
-  current_beat = n
+  if (measures_left <=0):
+    beats_left -= 1
+    if (beats_left <= 0):
+      read_next_section()
 
 func _read_sheet(source_file: String):
     var file := File.new()
