@@ -6,3 +6,7 @@
 [node name="Player" type="Spatial"]
 script = ExtResource( 1 )
 instrument = ExtResource( 2 )
+
+[node name="MelodyTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true

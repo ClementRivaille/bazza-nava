@@ -16,9 +16,12 @@ var probabilities: Array = []
 
 var last_note: int
 var last_octave: int
+var repeat: int = 0
 
-var MAX_REPEAT := 3
+var MAX_REPEAT := 2
 var OCTAVES := [3,4]
+
+onready var melody_timer: Timer = $MelodyTimer
 
 func _ready():
   sampler = instrument.instance()
@@ -34,7 +37,6 @@ func set_harmony(base: String, scale: int, modifiers: Array = []):
     probabilities[m_idx] += modifiers[m_idx]
 
 func _get_random_note() -> int:
-  print(probabilities)
   var max_score = 0
   for prob in probabilities:
     max_score += prob
@@ -49,12 +51,37 @@ func _get_random_note() -> int:
       break
     index += 1
   return int(min(6,index))
+  
+func _select_octave(note: int) -> int:
+  if !melody_timer.is_stopped() && last_octave != null:
+    if abs(note - last_note) < 4:
+      return last_octave
+    else:
+      if note < last_note:
+        return last_octave + 1
+      else:
+        return last_octave - 1
+  else:
+    return OCTAVES[randi()%OCTAVES.size()]
 
 func play_random_note():
   var r_note := _get_random_note()
+  if r_note == last_note:
+    repeat += 1
+    if repeat > MAX_REPEAT:
+      while r_note == last_note:
+        r_note = _get_random_note()
+      repeat = 0
+  else:
+    repeat = 0
+  
   var noteValue := musicTheory.calculate_note_value(currentBase, 2, currentScale, r_note)
   
   var note_name := calculator.get_note_name(noteValue)
-  var octave : int = OCTAVES[randi()%OCTAVES.size()]
+  var octave := _select_octave(r_note)
   
   sampler.play_note(note_name, octave)
+  melody_timer.start()
+
+  last_note = r_note
+  last_octave = octave
