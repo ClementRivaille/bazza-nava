@@ -1,0 +1,18 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://addons/SimpleSampler/sampler.gd" type="Script" id=1]
+[ext_resource path="res://addons/SimpleSampler/sampler_icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/sounds/rhodes/B3.tres" type="Resource" id=3]
+[ext_resource path="res://assets/sounds/rhodes/B4.tres" type="Resource" id=4]
+[ext_resource path="res://assets/sounds/rhodes/D3.tres" type="Resource" id=5]
+[ext_resource path="res://assets/sounds/rhodes/D4.tres" type="Resource" id=6]
+[ext_resource path="res://assets/sounds/rhodes/F4.tres" type="Resource" id=7]
+[ext_resource path="res://assets/sounds/rhodes/G3.tres" type="Resource" id=8]
+
+[node name="Sampler" type="AudioStreamPlayer"]
+volume_db = -13.876
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+samples = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ]

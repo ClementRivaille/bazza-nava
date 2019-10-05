@@ -5,69 +5,51 @@
   },
   "sections": [
     {
-      "measures": 3,
       "chord": 0
     },
     {
-      "measures": 1,
       "chord": 1
     },
     {
-      "measures": 1,
-      "chord": 0
-    },
-    {
-      "measures": 1,
-      "chord": 1
-    },
-    {
-      "measures": 1,
-      "chord": 0
-    },
-    {
-      "measures": 1,
-      "chord": 1
-    },
-    {
-      "measures": 1,
-      "chord": 0
-    },
-    {
-      "measures": 1,
-      "chord": 1
-    },
-    {
-      "measures": 1,
       "chord": 5
     },
     {
-      "measures": 1,
-      "chord": 6
-    },
-    {
-      "measures": 1,
-      "chord": 5
-    },
-    {
-      "measures": 1,
-      "chord": 6
-    },
-    {
-      "measures": 1,
-      "chord": 5
-    },
-    {
-      "measures": 1,
-      "chord": 6
-    },
-    {
-      "measures": 1,
-      "chord": 5
-    },
-    {
-      "measures": 1,
       "chord": 6
     }
+  ],
+  "score": [
+    { "measures": 3, "section": 0 },
+    { "measures": 1, "section": 1 },
+    { "measures": 1, "section": 0 },
+    { "measures": 1, "section": 1 },
+    { "measures": 1, "section": 0 },
+    { "measures": 1, "section": 1 },
+    { "measures": 1, "section": 0 },
+    { "measures": 1, "section": 1 },
+    { "measures": 1, "section": 2 },
+    { "measures": 1, "section": 3 },
+    { "measures": 1, "section": 2 },
+    { "measures": 1, "section": 3 },
+    { "measures": 1, "section": 2 },
+    { "measures": 1, "section": 3 },
+    { "measures": 1, "section": 2 },
+    { "measures": 1, "section": 3 },
+    { "measures": 1, "section": 0 },
+    { "measures": 1, "section": 1 },
+    { "measures": 1, "section": 0 },
+    { "measures": 1, "section": 1 },
+    { "measures": 1, "section": 0 },
+    { "measures": 1, "section": 1 },
+    { "measures": 1, "section": 0 },
+    { "measures": 1, "section": 1 },
+    { "measures": 1, "section": 2 },
+    { "measures": 1, "section": 3 },
+    { "measures": 1, "section": 2 },
+    { "measures": 1, "section": 3 },
+    { "measures": 1, "section": 2 },
+    { "measures": 1, "section": 3 },
+    { "measures": 1, "section": 2 },
+    { "measures": 1, "section": 3 }
   ]
 }
 

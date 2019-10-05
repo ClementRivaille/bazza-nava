@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/3_G_3.wav-e41453dc38387f3602e3014aa818487e.sample"
+
+[deps]
+
+source_file="res://assets/sounds/rhodes/3_G_3.wav"
+dest_files=[ "res://.import/3_G_3.wav-e41453dc38387f3602e3014aa818487e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

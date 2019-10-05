@@ -40,26 +40,26 @@ func start_song():
   read_next_section()
   
 func read_next_section():
-  var next := sheet.get_next_section()
+  var next_segment := sheet.get_next_segment()
   var new_mode := sheet.mode
   var new_root := sheet.root
-  print(next.chord)
+  var next_section := sheet.get_section(next_segment.section)
 
-  if (next.mode != null):
+  if (next_section.mode != null):
     new_mode = sheet.mode
   
-  if (next.chord != null):
+  if (next_section.chord != null):
     var new_root_value: int = music_theory.calculate_note_value(
       new_root, 4,
-      new_mode, next.chord)
+      new_mode, next_section.chord)
     new_root = calculator.get_note_name(new_root_value)
-    new_mode = (new_mode + next.chord) % music_theory.scales_intervals.size()
+    new_mode = (new_mode + next_section.chord) % music_theory.scales_intervals.size()
     
   get_tree().call_group("player", "set_harmony", new_root, new_mode)
   
-  measures_left = next.measures
-  beats_left = next.beats
-  sheet.change_section()
+  measures_left = next_segment.measures
+  beats_left = next_segment.beats
+  sheet.change_segment()
 
   
 func on_measure():
@@ -68,7 +68,7 @@ func on_measure():
     read_next_section()
 
 func on_beat(n: int):
-  player.play_random_note()
+  # player.play_random_note()
   if (measures_left <=0):
     beats_left -= 1
     if (beats_left <= 0):
