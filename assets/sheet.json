@@ -5,16 +5,20 @@
   },
   "sections": [
     {
-      "chord": 0
+      "chord": 0,
+      "modifiers": [-3,0,0,0,0,-1,4]
     },
     {
-      "chord": 1
+      "chord": 1,
+      "modifiers": [0,0,0,0,0,2,0]
     },
     {
-      "chord": 5
+      "chord": 5,
+      "modifiers": [0,0,0,0,0,-1,3]
     },
     {
-      "chord": 6
+      "chord": 6,
+      "modifiers": [0,-2,0,1,0,0,2]
     }
   ],
   "score": [

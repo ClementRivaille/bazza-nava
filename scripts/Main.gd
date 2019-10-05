@@ -55,7 +55,7 @@ func read_next_section():
     new_root = calculator.get_note_name(new_root_value)
     new_mode = (new_mode + next_section.chord) % music_theory.scales_intervals.size()
     
-  get_tree().call_group("player", "set_harmony", new_root, new_mode)
+  get_tree().call_group("player", "set_harmony", new_root, new_mode, next_section.modifiers)
   
   measures_left = next_segment.measures
   beats_left = next_segment.beats
