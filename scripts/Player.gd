@@ -11,11 +11,11 @@ var currentScale: int
 var musicTheory: MusicTheory
 var calculator: NoteValueCalculator
 
-var default_probabilities: Array = [4,3,5,2,4,3,1]
+var default_probabilities: Array = [4,2,5,2,4,3,1]
 var probabilities: Array = []
 
 var last_note: int
-var last_octave: int
+var last_octave: int = 0
 var repeat: int = 0
 
 var MAX_REPEAT := 2
@@ -28,6 +28,7 @@ func _ready():
   add_child(sampler)
   musicTheory = get_node("/root/MusicTheory")
   calculator = get_node("/root/NoteValue")
+  randomize()
 
 func set_harmony(base: String, scale: int, modifiers: Array = []):
   currentBase = base
@@ -53,14 +54,14 @@ func _get_random_note() -> int:
   return int(min(6,index))
   
 func _select_octave(note: int) -> int:
-  if !melody_timer.is_stopped() && last_octave != null:
+  if !melody_timer.is_stopped() && last_octave != 0:
     if abs(note - last_note) < 4:
       return last_octave
     else:
       if note < last_note:
-        return last_octave + 1
+        return int(min(OCTAVES[OCTAVES.size() - 1], last_octave + 1))
       else:
-        return last_octave - 1
+        return int(max(OCTAVES[0] - 1, last_octave - 1))
   else:
     return OCTAVES[randi()%OCTAVES.size()]
 

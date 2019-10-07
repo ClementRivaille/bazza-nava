@@ -18,26 +18,23 @@
     },
     {
       "chord": 6,
-      "modifiers": [0,-2,0,1,0,0,2]
+      "modifiers": [0,-1,0,1,0,0,2]
+    },
+    {
+      "root": "C#",
+      "mode": "DORIAN",
+      "chord": 0,
+      "modifiers": [0,0,0,0,0,-2,3]
+    },
+    {
+      "root": "C#",
+      "mode": "DORIAN",
+      "chord": 3
     }
   ],
   "score": [
-    { "measures": 3, "section": 0 },
-    { "measures": 1, "section": 1 },
-    { "measures": 1, "section": 0 },
-    { "measures": 1, "section": 1 },
-    { "measures": 1, "section": 0 },
-    { "measures": 1, "section": 1 },
-    { "measures": 1, "section": 0 },
-    { "measures": 1, "section": 1 },
-    { "measures": 1, "section": 2 },
-    { "measures": 1, "section": 3 },
-    { "measures": 1, "section": 2 },
-    { "measures": 1, "section": 3 },
-    { "measures": 1, "section": 2 },
-    { "measures": 1, "section": 3 },
-    { "measures": 1, "section": 2 },
-    { "measures": 1, "section": 3 },
+    { "measures": 2, "section": 1 },
+
     { "measures": 1, "section": 0 },
     { "measures": 1, "section": 1 },
     { "measures": 1, "section": 0 },
@@ -46,6 +43,7 @@
     { "measures": 1, "section": 1 },
     { "measures": 1, "section": 0 },
     { "measures": 1, "section": 1 },
+
     { "measures": 1, "section": 2 },
     { "measures": 1, "section": 3 },
     { "measures": 1, "section": 2 },
@@ -53,7 +51,61 @@
     { "measures": 1, "section": 2 },
     { "measures": 1, "section": 3 },
     { "measures": 1, "section": 2 },
-    { "measures": 1, "section": 3 }
+    { "measures": 1, "section": 3 },
+
+    { "measures": 1, "section": 0 },
+    { "measures": 1, "section": 1 },
+    { "measures": 1, "section": 0 },
+    { "measures": 1, "section": 1 },
+    { "measures": 1, "section": 0 },
+    { "measures": 1, "section": 1 },
+    { "measures": 1, "section": 0 },
+    { "measures": 1, "section": 1 },
+
+    { "measures": 1, "section": 2 },
+    { "measures": 1, "section": 3 },
+    { "measures": 1, "section": 2 },
+    { "measures": 1, "section": 3 },
+    { "measures": 1, "section": 2 },
+    { "measures": 1, "section": 3 },
+    { "measures": 1, "section": 2 },
+    { "measures": 1, "section": 3 },
+
+    { "measures": 1, "section": 0 },
+    { "measures": 1, "section": 1 },
+    { "measures": 1, "section": 0 },
+    { "measures": 1, "section": 1 },
+    { "measures": 1, "section": 0 },
+    { "measures": 1, "section": 1 },
+    { "measures": 1, "section": 0 },
+    { "measures": 1, "section": 1 },
+
+    { "measures": 1, "section": 4 },
+    { "measures": 1, "section": 5 },
+    { "measures": 1, "section": 4 },
+    { "measures": 1, "section": 5 },
+    { "measures": 1, "section": 4 },
+    { "measures": 1, "section": 5 },
+    { "measures": 1, "section": 4 },
+    { "measures": 1, "section": 5 },
+
+    { "measures": 1, "section": 2 },
+    { "measures": 1, "section": 3 },
+    { "measures": 1, "section": 2 },
+    { "measures": 1, "section": 3 },
+    { "measures": 1, "section": 2 },
+    { "measures": 1, "section": 3 },
+    { "measures": 1, "section": 2 },
+    { "measures": 1, "section": 3 },
+
+    { "measures": 1, "section": 0 },
+    { "measures": 1, "section": 1 },
+    { "measures": 1, "section": 0 },
+    { "measures": 1, "section": 1 },
+    { "measures": 1, "section": 0 },
+    { "measures": 1, "section": 1 },
+    { "measures": 1, "section": 0 },
+    { "measures": 3, "section": 1 }
   ]
 }
 

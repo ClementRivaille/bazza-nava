@@ -10,7 +10,7 @@
 [ext_resource path="res://assets/sounds/rhodes/G3.tres" type="Resource" id=8]
 
 [node name="Sampler" type="AudioStreamPlayer"]
-volume_db = -13.876
+volume_db = -6.731
 script = ExtResource( 1 )
 __meta__ = {
 "_editor_icon": ExtResource( 2 )

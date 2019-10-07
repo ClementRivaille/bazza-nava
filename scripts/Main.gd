@@ -45,10 +45,12 @@ func read_next_section():
   var new_root := sheet.root
   var next_section := sheet.get_section(next_segment.section)
 
-  if (next_section.mode != null):
-    new_mode = sheet.mode
+  if next_section.mode != -1:
+    new_mode = next_section.mode
+  if next_section.root != '':
+    new_root = next_section.root
   
-  if (next_section.chord != null):
+  if (next_section.chord != -1):
     var new_root_value: int = music_theory.calculate_note_value(
       new_root, 4,
       new_mode, next_section.chord)
