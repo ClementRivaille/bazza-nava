@@ -13,7 +13,6 @@ func _ready():
   for i in range(max_notes):
     var sampler := Sampler.new()
     sampler.samples = samples
-    sampler.out_bus = bus
     sampler.volume_db = volume_db
     
     add_child(sampler)

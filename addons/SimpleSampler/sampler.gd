@@ -1,28 +1,9 @@
 extends AudioStreamPlayer
 class_name Sampler
 
-# 0 4 7 10 9
 export(Array, AudioStreamSample) var samples: Array
 
-var bus_index: int
-var pitch : AudioEffectPitchShift
-var out_bus : String
-
-
-func _init():
-  # create an audio bus
-  bus_index = AudioServer.get_bus_count()
-  AudioServer.add_bus(bus_index)
-  AudioServer.set_bus_name(bus_index, 'sampler' + str(bus_index))
-  pitch = AudioEffectPitchShift.new()
-  AudioServer.add_bus_effect(bus_index, pitch)
-  out_bus = bus
-  bus = AudioServer.get_bus_name(bus_index)
-
 func _ready():
-  # Redirect private pitch bus to audioStreamPlayer bus
-  AudioServer.set_bus_send(bus_index, out_bus)
-  
   # Calculate samples' values and sort them
   var calculator: NoteValueCalculator = get_node("/root/NoteValue")
   for s in samples:
@@ -56,6 +37,6 @@ func play_note(note: String, octave: int = 4):
   stream = sample.stream
 
   # Set pitch relatively to sample
-  pitch.set_pitch_scale(pow(2, (note_val - sample.value) / 12.0))
+  pitch_scale = pow(2, (note_val - sample.value) / 12.0)
 
   play(0.0)
