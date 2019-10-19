@@ -53,15 +53,17 @@ func _get_random_note() -> int:
     index += 1
   return int(min(6,index))
   
-func _select_octave(note: int) -> int:
+func _select_octave(last_note: String, next_note: String) -> int:
   if !melody_timer.is_stopped() && last_octave != 0:
-    if abs(note - last_note) < 4:
+    var last_nvalue = calculator.get_note_value(last_note)
+    var next_nvalue = calculator.get_note_value(next_note)
+    if abs(last_nvalue - next_nvalue) <= 6:
       return last_octave
     else:
-      if note < last_note:
-        return int(min(OCTAVES[OCTAVES.size() - 1], last_octave + 1))
+      if last_nvalue < next_nvalue:
+        return int(max(last_octave, OCTAVES[0]))
       else:
-        return int(max(OCTAVES[0] - 1, last_octave - 1))
+        return int(min(last_octave + 1, OCTAVES[OCTAVES.size() - 1]))
   else:
     return OCTAVES[randi()%OCTAVES.size()]
 
@@ -76,10 +78,12 @@ func play_random_note():
   else:
     repeat = 0
   
-  var noteValue := musicTheory.calculate_note_value(currentBase, 2, currentScale, r_note)
+  var note_value := musicTheory.calculate_note_value(currentBase, 2, currentScale, r_note)
+  var previous_value = musicTheory.calculate_note_value(currentBase, 2, currentScale, last_note)
+  var previous_note_name := calculator.get_note_name(previous_value)
   
-  var note_name := calculator.get_note_name(noteValue)
-  var octave := _select_octave(r_note)
+  var note_name := calculator.get_note_name(note_value)
+  var octave := _select_octave(previous_note_name, note_name)
   
   sampler.play_note(note_name, octave)
   melody_timer.start()
