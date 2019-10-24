@@ -1,3 +1,6 @@
 
 \.import/
 dev
+assets/raw_models
+*.dae
+

@@ -4,7 +4,7 @@ vibraphone : Xylophone V1 by printable_models (https://free3d.com/fr/3d-model/xy
 sax : Saxophone V1 by printable_models (https://free3d.com/3d-model/saxophone-v1--94337.html)
 flute : Flute V04 by printable_models (https://free3d.com/3d-model/flute-v04--879181.html)
 organ : Synthetizer by wufudufu (https://free3d.com/3d-model/synthesizer-80038.html)
-trumpet : Trumpet by rifqiard (https://free3d.com/3d-model/trumpet-13967.html)
+trumpet : Trumpet by Teh_Bucket (https://opengameart.org/content/trumpet)
 contrebass : Contrabajo (double bass) by srbecerrita (https://www.thingiverse.com/thing:2422099)
 guitar elec : Ricken Backer 4003 - Bass by thmacr (https://free3d.com/3d-model/ricken-backer-4003---bass-888215.html)
 radio : Radio by aleksicaxd (https://free3d.com/3d-model/radio-51766.html)
