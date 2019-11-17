@@ -1,41 +1,159 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://scripts/Main.gd" type="Script" id=1]
-[ext_resource path="res://addons/SimpleSampler/multisampler.gd" type="Script" id=2]
-[ext_resource path="res://addons/SimpleSampler/sampler_icon.png" type="Texture" id=3]
-[ext_resource path="res://assets/sounds/rhodes/B3.tres" type="Resource" id=4]
-[ext_resource path="res://assets/sounds/rhodes/B4.tres" type="Resource" id=5]
-[ext_resource path="res://assets/sounds/rhodes/D3.tres" type="Resource" id=6]
-[ext_resource path="res://assets/sounds/rhodes/D4.tres" type="Resource" id=7]
-[ext_resource path="res://assets/sounds/rhodes/F4.tres" type="Resource" id=8]
-[ext_resource path="res://assets/sounds/rhodes/G3.tres" type="Resource" id=9]
-[ext_resource path="res://scenes/instruments/TestSynth.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=11]
-[ext_resource path="res://scenes/instruments/Rhodes.tscn" type="PackedScene" id=12]
-[ext_resource path="res://assets/void_garden.ogg" type="AudioStream" id=13]
-[ext_resource path="res://scripts/MetronomePlayer.gd" type="Script" id=14]
+[ext_resource path="res://scenes/Conductor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/WALL_material.tres" type="Material" id=2]
+[ext_resource path="res://assets/models/contrabass/contrabass.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/Instrument.gd" type="Script" id=4]
+[ext_resource path="res://assets/models/flute/flute.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/models/guitar/guitar.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/models/guitar-elec/guitar_elec.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/models/piano/piano.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/models/saxophone/saxophone.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/models/synth/synth.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/models/trumpet/trumpet.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/models/xylophone/xylophone.tscn" type="PackedScene" id=12]
+
+[sub_resource type="CubeMesh" id=1]
+size = Vector3( 30, 1, 30 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 15, 0.5, 15 )
+
+[sub_resource type="CubeMesh" id=3]
+size = Vector3( 30, 15, 1 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 15, 7.5, 0.5 )
+
+[sub_resource type="CubeMesh" id=5]
+size = Vector3( 1, 15, 30 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 0.5, 7.5, 15 )
+
+[sub_resource type="ProceduralSky" id=7]
+
+[sub_resource type="Environment" id=8]
+background_mode = 2
+background_sky = SubResource( 7 )
+ambient_light_color = Color( 0.780392, 0.780392, 0.780392, 1 )
+ambient_light_energy = 1.4
+ambient_light_sky_contribution = 0.81
 
 [node name="Main" type="Spatial"]
-script = ExtResource( 1 )
 
-[node name="Multisampler" type="AudioStreamPlayer" parent="."]
-script = ExtResource( 2 )
-__meta__ = {
-"_editor_icon": ExtResource( 3 )
-}
-samples = [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ]
-max_notes = 3
+[node name="Conductor" parent="." instance=ExtResource( 1 )]
 
-[node name="Sampler" parent="." instance=ExtResource( 10 )]
+[node name="Walls" type="Spatial" parent="."]
+editor/display_folded = true
 
-[node name="Player" parent="." groups=[
-"player",
-] instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.93512, -1.0951, -4.56977 )
-instrument = ExtResource( 12 )
+[node name="Floor" type="StaticBody" parent="Walls"]
 
-[node name="MetronomePlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 13 )
-script = ExtResource( 14 )
-bpm = 140
-beats_in_measure = 5
+[node name="MeshInstance" type="MeshInstance" parent="Walls/Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0112305, 0, -0.0126953 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/Floor"]
+shape = SubResource( 2 )
+
+[node name="Roof" type="StaticBody" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Walls/Roof"]
+mesh = SubResource( 1 )
+material/0 = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/Roof"]
+shape = SubResource( 2 )
+
+[node name="Left" type="StaticBody" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, -15 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Walls/Left"]
+mesh = SubResource( 3 )
+material/0 = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/Left"]
+shape = SubResource( 4 )
+
+[node name="Right" type="StaticBody" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 15 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Walls/Right"]
+mesh = SubResource( 3 )
+material/0 = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/Right"]
+shape = SubResource( 4 )
+
+[node name="Back" type="StaticBody" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 7.5, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Walls/Back"]
+mesh = SubResource( 5 )
+material/0 = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/Back"]
+shape = SubResource( 6 )
+
+[node name="Front" type="StaticBody" parent="Walls"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 7.5, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls/Front"]
+shape = SubResource( 6 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -18, 7.5, 0 )
+fov = 75.0
+size = 15.0
+
+[node name="Instruments" type="Spatial" parent="."]
+
+[node name="Contrabass" parent="Instruments" instance=ExtResource( 3 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.16488, 2.96632, -6.67113 )
+script = ExtResource( 4 )
+input = 6
+
+[node name="Flute" parent="Instruments" instance=ExtResource( 5 )]
+transform = Transform( -3.0598e-09, 0, 0.07, 0, 0.07, 0, -0.07, 0, -3.0598e-09, 7.82064, 0.7, -1.90899 )
+script = ExtResource( 4 )
+input = 9
+
+[node name="Guitar" parent="Instruments" instance=ExtResource( 6 )]
+transform = Transform( -0.025, 2.18557e-09, 9.55342e-17, 0, -1.09278e-09, 0.025, 2.18557e-09, 0.025, 1.09278e-09, 7.31302, 4.1, -13.977 )
+script = ExtResource( 4 )
+input = 4
+
+[node name="GuitarElec" parent="Instruments" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.47302, 4.7, -13.993 )
+script = ExtResource( 4 )
+input = 3
+
+[node name="Piano" parent="Instruments" instance=ExtResource( 8 )]
+transform = Transform( -0.0899999, 0, -7.86805e-09, 0, 0.09, 0, 7.86804e-09, 0, -0.09, 0.0604496, 4.216, 12.633 )
+script = ExtResource( 4 )
+input = 1
+
+[node name="Saxophone" parent="Instruments" instance=ExtResource( 9 )]
+transform = Transform( -4.80824e-08, 0, 1.1, 0, 1.1, 0, -1.1, 0, -4.80825e-08, 7.42666, 2.5, 2.264 )
+script = ExtResource( 4 )
+input = 7
+
+[node name="Synth" parent="Instruments" instance=ExtResource( 10 )]
+transform = Transform( 1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -2.28612, 0.5, -12.612 )
+script = ExtResource( 4 )
+input = 5
+
+[node name="Trumpet" parent="Instruments" instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 7.97913, 3.27, 5.11399 )
+script = ExtResource( 4 )
+input = 8
+
+[node name="Xylophone" parent="Instruments" instance=ExtResource( 12 )]
+transform = Transform( -2.18557e-09, 0.0499999, 2.18557e-09, 0, -2.18557e-09, 0.05, 0.05, 2.18557e-09, 9.55342e-17, 7.24749, 3.72141, 9.59637 )
+script = ExtResource( 4 )
+input = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 8 )
