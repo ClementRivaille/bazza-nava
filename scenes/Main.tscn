@@ -1,17 +1,20 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scenes/Conductor.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/WALL_material.tres" type="Material" id=2]
-[ext_resource path="res://assets/models/contrabass/contrabass.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scripts/Instrument.gd" type="Script" id=4]
-[ext_resource path="res://assets/models/flute/flute.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/models/guitar/guitar.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/models/guitar-elec/guitar_elec.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/models/piano/piano.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/models/saxophone/saxophone.tscn" type="PackedScene" id=9]
-[ext_resource path="res://assets/models/synth/synth.tscn" type="PackedScene" id=10]
-[ext_resource path="res://assets/models/trumpet/trumpet.tscn" type="PackedScene" id=11]
-[ext_resource path="res://assets/models/xylophone/xylophone.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/floor_material.tres" type="Material" id=2]
+[ext_resource path="res://assets/roof_material.tres" type="Material" id=3]
+[ext_resource path="res://assets/WALL_material.tres" type="Material" id=4]
+[ext_resource path="res://assets/models/contrabass/contrabass.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/Instrument.gd" type="Script" id=6]
+[ext_resource path="res://assets/models/flute/flute.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/models/guitar/guitar.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/models/guitar-elec/guitar_elec.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/models/piano/piano.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/models/saxophone/saxophone.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/models/synth/synth.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/models/trumpet/trumpet.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/models/xylophone/xylophone.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/poster.png" type="Texture" id=15]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 30, 1, 30 )
@@ -34,11 +37,16 @@ extents = Vector3( 0.5, 7.5, 15 )
 [sub_resource type="ProceduralSky" id=7]
 
 [sub_resource type="Environment" id=8]
-background_mode = 2
 background_sky = SubResource( 7 )
-ambient_light_color = Color( 0.780392, 0.780392, 0.780392, 1 )
-ambient_light_energy = 1.4
-ambient_light_sky_contribution = 0.81
+ambient_light_color = Color( 1, 1, 1, 1 )
+ambient_light_energy = 0.4
+ambient_light_sky_contribution = 0.0
+
+[sub_resource type="PlaneMesh" id=9]
+size = Vector2( 23, 13 )
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_texture = ExtResource( 15 )
 
 [node name="Main" type="Spatial"]
 
@@ -50,7 +58,12 @@ editor/display_folded = true
 [node name="Floor" type="StaticBody" parent="Walls"]
 
 [node name="MeshInstance" type="MeshInstance" parent="Walls/Floor"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0112305, 0, -0.0126953 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.020752, -0.036499, 0.0240021 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 2 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Walls/Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.020752, -0.036499, 0.0240021 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 2 )
 
@@ -62,7 +75,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Walls/Roof"]
 mesh = SubResource( 1 )
-material/0 = ExtResource( 2 )
+material/0 = ExtResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/Roof"]
 shape = SubResource( 2 )
@@ -72,7 +85,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, -15 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Walls/Left"]
 mesh = SubResource( 3 )
-material/0 = ExtResource( 2 )
+material/0 = ExtResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/Left"]
 shape = SubResource( 4 )
@@ -82,7 +95,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 15 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Walls/Right"]
 mesh = SubResource( 3 )
-material/0 = ExtResource( 2 )
+material/0 = ExtResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/Right"]
 shape = SubResource( 4 )
@@ -91,8 +104,9 @@ shape = SubResource( 4 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 7.5, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Walls/Back"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00122261, 0, 0.0272784 )
 mesh = SubResource( 5 )
-material/0 = ExtResource( 2 )
+material/0 = ExtResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/Back"]
 shape = SubResource( 6 )
@@ -104,56 +118,65 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 7.5, 0 )
 shape = SubResource( 6 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -18, 7.5, 0 )
-fov = 75.0
-size = 15.0
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.48, 7.4, 0 )
+fov = 73.0
+size = 16.0
 
 [node name="Instruments" type="Spatial" parent="."]
 
-[node name="Contrabass" parent="Instruments" instance=ExtResource( 3 )]
+[node name="Contrabass" parent="Instruments" instance=ExtResource( 5 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8.16488, 2.96632, -6.67113 )
-script = ExtResource( 4 )
+script = ExtResource( 6 )
 input = 6
 
-[node name="Flute" parent="Instruments" instance=ExtResource( 5 )]
-transform = Transform( -3.0598e-09, 0, 0.07, 0, 0.07, 0, -0.07, 0, -3.0598e-09, 7.82064, 0.7, -1.90899 )
-script = ExtResource( 4 )
+[node name="Flute" parent="Instruments" instance=ExtResource( 7 )]
+transform = Transform( 0.0157373, -5.96294e-09, -0.0682081, 0, -0.07, 6.11959e-09, -0.0682081, -1.37579e-09, -0.0157373, 7.82064, 0.7, -2.42839 )
+script = ExtResource( 6 )
 input = 9
 
-[node name="Guitar" parent="Instruments" instance=ExtResource( 6 )]
+[node name="Guitar" parent="Instruments" instance=ExtResource( 8 )]
 transform = Transform( -0.025, 2.18557e-09, 9.55342e-17, 0, -1.09278e-09, 0.025, 2.18557e-09, 0.025, 1.09278e-09, 7.31302, 4.1, -13.977 )
-script = ExtResource( 4 )
+script = ExtResource( 6 )
 input = 4
 
-[node name="GuitarElec" parent="Instruments" instance=ExtResource( 7 )]
+[node name="GuitarElec" parent="Instruments" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.47302, 4.7, -13.993 )
-script = ExtResource( 4 )
+script = ExtResource( 6 )
 input = 3
 
-[node name="Piano" parent="Instruments" instance=ExtResource( 8 )]
-transform = Transform( -0.0899999, 0, -7.86805e-09, 0, 0.09, 0, 7.86804e-09, 0, -0.09, 0.0604496, 4.216, 12.633 )
-script = ExtResource( 4 )
+[node name="Piano" parent="Instruments" instance=ExtResource( 10 )]
+transform = Transform( -0.0899999, 0, -7.86805e-09, 0, 0.09, 0, 7.86804e-09, 0, -0.09, -2.191, 4.216, 12.633 )
+script = ExtResource( 6 )
 input = 1
 
-[node name="Saxophone" parent="Instruments" instance=ExtResource( 9 )]
-transform = Transform( -4.80824e-08, 0, 1.1, 0, 1.1, 0, -1.1, 0, -4.80825e-08, 7.42666, 2.5, 2.264 )
-script = ExtResource( 4 )
+[node name="Saxophone" parent="Instruments" instance=ExtResource( 11 )]
+transform = Transform( -4.80824e-08, 0, 1.1, 0, 1.1, 0, -1.1, 0, -4.80825e-08, 7.42666, 2.5, 1.64179 )
+script = ExtResource( 6 )
 input = 7
 
-[node name="Synth" parent="Instruments" instance=ExtResource( 10 )]
+[node name="Synth" parent="Instruments" instance=ExtResource( 12 )]
 transform = Transform( 1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -2.28612, 0.5, -12.612 )
-script = ExtResource( 4 )
+script = ExtResource( 6 )
 input = 5
 
-[node name="Trumpet" parent="Instruments" instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 7.97913, 3.27, 5.11399 )
-script = ExtResource( 4 )
+[node name="Trumpet" parent="Instruments" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 7.97913, 3.27, 4.68478 )
+script = ExtResource( 6 )
 input = 8
 
-[node name="Xylophone" parent="Instruments" instance=ExtResource( 12 )]
-transform = Transform( -2.18557e-09, 0.0499999, 2.18557e-09, 0, -2.18557e-09, 0.05, 0.05, 2.18557e-09, 9.55342e-17, 7.24749, 3.72141, 9.59637 )
-script = ExtResource( 4 )
+[node name="Xylophone" parent="Instruments" instance=ExtResource( 14 )]
+transform = Transform( 0.0263315, -0.0539134, -2.35663e-09, 0, -2.62268e-09, 0.06, -0.0539134, -0.0263315, -1.15098e-09, 5.19922, 3.09187, 9.36634 )
+script = ExtResource( 6 )
 input = 2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 8 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.363046, -0.303589, -0.880927, 0.929231, 0.187737, 0.318254, 0.0687642, -0.934125, 0.350261, -34.6782, 20.4579, 0.291428 )
+light_energy = 0.7
+
+[node name="Poster" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, -1, 1, -4.37114e-08, -4.37114e-08, 9.4, 7.5, 0 )
+mesh = SubResource( 9 )
+material/0 = SubResource( 10 )
