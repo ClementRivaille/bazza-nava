@@ -11,4 +11,4 @@ __meta__ = {
 }
 stream = ExtResource( 3 )
 tone = "E"
-octave = 5
+octave = 4

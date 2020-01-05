@@ -23,6 +23,9 @@ var OCTAVES := [3,4]
 
 onready var melody_timer: Timer = $MelodyTimer
 
+func _enter_tree():
+  add_to_group("player")
+
 func _ready():
   sampler = instrument.instance()
   add_child(sampler)
@@ -58,7 +61,11 @@ func _select_octave(last_note: String, next_note: String) -> int:
     var last_nvalue = calculator.get_note_value(last_note)
     var next_nvalue = calculator.get_note_value(next_note)
     if abs(last_nvalue - next_nvalue) <= 6:
-      return last_octave
+      # if we hit the same note twice, there's a random chance to go to another octave
+      if last_nvalue == next_nvalue:
+        return OCTAVES[randi()%OCTAVES.size()]
+      else:
+        return last_octave
     else:
       if last_nvalue < next_nvalue:
         return int(max(last_octave, OCTAVES[0]))
