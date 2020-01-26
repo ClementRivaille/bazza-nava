@@ -1,0 +1,103 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://addons/SimpleSampler/sampler.gd" type="Script" id=1]
+[ext_resource path="res://addons/SimpleSampler/sampler_icon.png" type="Texture" id=2]
+[ext_resource path="res://addons/SimpleSampler/sample_resource.gd" type="Script" id=3]
+[ext_resource path="res://assets/sounds/flute/flute_A4_025_mezzo-forte_normal.ogg" type="AudioStream" id=4]
+[ext_resource path="res://assets/sounds/flute/flute_A5_025_mezzo-forte_normal.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/sounds/flute/flute_A6_025_mezzo-forte_normal.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/sounds/flute/flute_C4_025_mezzo-forte_normal.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/sounds/flute/flute_C5_025_mezzo-forte_normal.ogg" type="AudioStream" id=8]
+[ext_resource path="res://assets/sounds/flute/flute_C6_025_mezzo-forte_normal.ogg" type="AudioStream" id=9]
+[ext_resource path="res://assets/sounds/flute/flute_C7_025_mezzo-forte_normal.ogg" type="AudioStream" id=10]
+[ext_resource path="res://assets/sounds/flute/flute_E4_025_mezzo-forte_normal.ogg" type="AudioStream" id=11]
+[ext_resource path="res://assets/sounds/flute/flute_E5_025_mezzo-forte_normal.ogg" type="AudioStream" id=12]
+[ext_resource path="res://assets/sounds/flute/flute_E6_025_mezzo-forte_normal.ogg" type="AudioStream" id=13]
+[ext_resource path="res://assets/sounds/flute/flute_Fs4_025_mezzo-forte_normal.ogg" type="AudioStream" id=14]
+[ext_resource path="res://assets/sounds/flute/flute_Fs5_025_mezzo-forte_normal.ogg" type="AudioStream" id=15]
+[ext_resource path="res://assets/sounds/flute/flute_Fs6_025_mezzo-forte_normal.ogg" type="AudioStream" id=16]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 3 )
+stream = ExtResource( 4 )
+tone = "A"
+octave = 4
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 3 )
+stream = ExtResource( 5 )
+tone = "A"
+octave = 5
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 3 )
+stream = ExtResource( 6 )
+tone = "A"
+octave = 6
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 3 )
+stream = ExtResource( 7 )
+tone = ""
+octave = 4
+
+[sub_resource type="Resource" id=5]
+script = ExtResource( 3 )
+stream = ExtResource( 8 )
+tone = ""
+octave = 5
+
+[sub_resource type="Resource" id=6]
+script = ExtResource( 3 )
+stream = ExtResource( 9 )
+tone = ""
+octave = 6
+
+[sub_resource type="Resource" id=7]
+script = ExtResource( 3 )
+stream = ExtResource( 10 )
+tone = ""
+octave = 7
+
+[sub_resource type="Resource" id=8]
+script = ExtResource( 3 )
+stream = ExtResource( 11 )
+tone = "E"
+octave = 4
+
+[sub_resource type="Resource" id=9]
+script = ExtResource( 3 )
+stream = ExtResource( 12 )
+tone = "E"
+octave = 5
+
+[sub_resource type="Resource" id=10]
+script = ExtResource( 3 )
+stream = ExtResource( 13 )
+tone = ""
+octave = 6
+
+[sub_resource type="Resource" id=11]
+script = ExtResource( 3 )
+stream = ExtResource( 14 )
+tone = "F#"
+octave = 4
+
+[sub_resource type="Resource" id=12]
+script = ExtResource( 3 )
+stream = ExtResource( 15 )
+tone = "F#"
+octave = 5
+
+[sub_resource type="Resource" id=13]
+script = ExtResource( 3 )
+stream = ExtResource( 16 )
+tone = "F#"
+octave = 6
+
+[node name="Flute" type="AudioStreamPlayer"]
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_icon": ExtResource( 2 )
+}
+samples = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ]

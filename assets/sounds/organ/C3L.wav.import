@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/C3L.wav-29686c5c8121e3bdb1a6b2693a5f8449.sample"
+
+[deps]
+
+source_file="res://assets/sounds/organ/C3L.wav"
+dest_files=[ "res://.import/C3L.wav-29686c5c8121e3bdb1a6b2693a5f8449.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

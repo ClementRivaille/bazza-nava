@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/A1.wav-8bcdb668218d7254c01a8bb3e82cb179.sample"
+
+[deps]
+
+source_file="res://assets/sounds/guitar/A1.wav"
+dest_files=[ "res://.import/A1.wav-8bcdb668218d7254c01a8bb3e82cb179.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

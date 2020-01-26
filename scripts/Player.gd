@@ -19,7 +19,7 @@ var last_octave: int = 0
 var repeat: int = 0
 
 var MAX_REPEAT := 2
-var OCTAVES := [3,4]
+export(Array, int) var OCTAVES := [3,4]
 
 onready var melody_timer: Timer = $MelodyTimer
 

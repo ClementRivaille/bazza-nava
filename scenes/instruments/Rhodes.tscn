@@ -1,18 +1,90 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://addons/SimpleSampler/sampler.gd" type="Script" id=1]
 [ext_resource path="res://addons/SimpleSampler/sampler_icon.png" type="Texture" id=2]
-[ext_resource path="res://assets/sounds/rhodes/B3.tres" type="Resource" id=3]
-[ext_resource path="res://assets/sounds/rhodes/B4.tres" type="Resource" id=4]
-[ext_resource path="res://assets/sounds/rhodes/D3.tres" type="Resource" id=5]
-[ext_resource path="res://assets/sounds/rhodes/D4.tres" type="Resource" id=6]
-[ext_resource path="res://assets/sounds/rhodes/F4.tres" type="Resource" id=7]
-[ext_resource path="res://assets/sounds/rhodes/G3.tres" type="Resource" id=8]
+[ext_resource path="res://addons/SimpleSampler/sample_resource.gd" type="Script" id=3]
+[ext_resource path="res://assets/sounds/rhodes/1_B_2.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/sounds/rhodes/2_A_2.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/sounds/rhodes/2_E_2.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/sounds/rhodes/3_B_2.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/sounds/rhodes/3_D_2.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/sounds/rhodes/3_G_2.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/sounds/rhodes/4_B_2.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/sounds/rhodes/4_D_2.wav" type="AudioStream" id=11]
+[ext_resource path="res://assets/sounds/rhodes/4_F_2.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/sounds/rhodes/5_A_2.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/sounds/rhodes/5_E_2.wav" type="AudioStream" id=14]
 
-[node name="Sampler" type="AudioStreamPlayer"]
+[sub_resource type="Resource" id=1]
+script = ExtResource( 3 )
+stream = ExtResource( 4 )
+tone = "B"
+octave = 1
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 3 )
+stream = ExtResource( 5 )
+tone = "A"
+octave = 2
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 3 )
+stream = ExtResource( 6 )
+tone = "E"
+octave = 2
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 3 )
+stream = ExtResource( 7 )
+tone = "B"
+octave = 3
+
+[sub_resource type="Resource" id=5]
+script = ExtResource( 3 )
+stream = ExtResource( 8 )
+tone = "D"
+octave = 3
+
+[sub_resource type="Resource" id=6]
+script = ExtResource( 3 )
+stream = ExtResource( 9 )
+tone = "G"
+octave = 3
+
+[sub_resource type="Resource" id=7]
+script = ExtResource( 3 )
+stream = ExtResource( 10 )
+tone = "B"
+octave = 4
+
+[sub_resource type="Resource" id=8]
+script = ExtResource( 3 )
+stream = ExtResource( 11 )
+tone = "D"
+octave = 4
+
+[sub_resource type="Resource" id=9]
+script = ExtResource( 3 )
+stream = ExtResource( 12 )
+tone = "F"
+octave = 4
+
+[sub_resource type="Resource" id=10]
+script = ExtResource( 3 )
+stream = ExtResource( 13 )
+tone = "A"
+octave = 5
+
+[sub_resource type="Resource" id=11]
+script = ExtResource( 3 )
+stream = ExtResource( 14 )
+tone = "E"
+octave = 5
+
+[node name="Rhodes" type="AudioStreamPlayer"]
 volume_db = -6.731
 script = ExtResource( 1 )
 __meta__ = {
 "_editor_icon": ExtResource( 2 )
 }
-samples = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ]
+samples = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ]

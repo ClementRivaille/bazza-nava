@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/db2_mf_rr1.wav-ce560d6650064086f1869f959cd58447.sample"
+
+[deps]
+
+source_file="res://assets/sounds/guitar-elec/db2_mf_rr1.wav"
+dest_files=[ "res://.import/db2_mf_rr1.wav-ce560d6650064086f1869f959cd58447.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

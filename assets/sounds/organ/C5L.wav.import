@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/C5L.wav-9818dcdabbed735f70d5332cec186eeb.sample"
+
+[deps]
+
+source_file="res://assets/sounds/organ/C5L.wav"
+dest_files=[ "res://.import/C5L.wav-9818dcdabbed735f70d5332cec186eeb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

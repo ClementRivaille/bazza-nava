@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Vibraphone.sustain.ff.C6.wav-4c6fca19221663de10cb77db8fa663fb.sample"
+
+[deps]
+
+source_file="res://assets/sounds/vibraphone/Vibraphone.sustain.ff.C6.wav"
+dest_files=[ "res://.import/Vibraphone.sustain.ff.C6.wav-4c6fca19221663de10cb77db8fa663fb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

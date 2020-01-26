@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/3_A-PB.wav-c1d681c23a16c15c7604468746eb0b7c.sample"
+
+[deps]
+
+source_file="res://assets/sounds/cello/3_A-PB.wav"
+dest_files=[ "res://.import/3_A-PB.wav-c1d681c23a16c15c7604468746eb0b7c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

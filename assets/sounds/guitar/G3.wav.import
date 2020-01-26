@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/G3.wav-496629435d99fb8b6dd3f1a012285e70.sample"
+
+[deps]
+
+source_file="res://assets/sounds/guitar/G3.wav"
+dest_files=[ "res://.import/G3.wav-496629435d99fb8b6dd3f1a012285e70.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

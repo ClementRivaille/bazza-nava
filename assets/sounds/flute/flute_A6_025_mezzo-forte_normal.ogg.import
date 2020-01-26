@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/flute_A6_025_mezzo-forte_normal.ogg-18678c7b7fa868cf145deb85ce20f0ea.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/flute/flute_A6_025_mezzo-forte_normal.ogg"
+dest_files=[ "res://.import/flute_A6_025_mezzo-forte_normal.ogg-18678c7b7fa868cf145deb85ce20f0ea.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

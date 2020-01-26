@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/C4L.wav-a849f553628030e21cc9ba5229f0017e.sample"
+
+[deps]
+
+source_file="res://assets/sounds/organ/C4L.wav"
+dest_files=[ "res://.import/C4L.wav-a849f553628030e21cc9ba5229f0017e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

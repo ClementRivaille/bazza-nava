@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/trumpet_G4_025_forte_normal.ogg-f0ce163462c3e8397197de5c9176d315.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/trumpet/trumpet_G4_025_forte_normal.ogg"
+dest_files=[ "res://.import/trumpet_G4_025_forte_normal.ogg-f0ce163462c3e8397197de5c9176d315.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

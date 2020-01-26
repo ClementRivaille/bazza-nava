@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/saxophone_C5_05_forte_normal.ogg-7170e6fb3ebbff167068e0899f4e3e74.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/saxo/saxophone_C5_05_forte_normal.ogg"
+dest_files=[ "res://.import/saxophone_C5_05_forte_normal.ogg-7170e6fb3ebbff167068e0899f4e3e74.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
