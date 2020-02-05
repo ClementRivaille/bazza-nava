@@ -11,5 +11,5 @@ dest_files=[ "res://.import/flute_E5_025_mezzo-forte_normal.ogg-e5d9fcb08e6a019b
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://scenes/Conductor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/floor_material.tres" type="Material" id=2]
@@ -7,16 +7,24 @@
 [ext_resource path="res://assets/models/contrabass/contrabass.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scripts/Instrument.gd" type="Script" id=6]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/models/flute/flute.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/models/guitar/guitar.tscn" type="PackedScene" id=9]
-[ext_resource path="res://assets/models/guitar-elec/guitar_elec.tscn" type="PackedScene" id=10]
-[ext_resource path="res://assets/models/piano/piano.tscn" type="PackedScene" id=11]
-[ext_resource path="res://scenes/instruments/Rhodes.tscn" type="PackedScene" id=12]
-[ext_resource path="res://assets/models/saxophone/saxophone.tscn" type="PackedScene" id=13]
-[ext_resource path="res://assets/models/synth/synth.tscn" type="PackedScene" id=14]
-[ext_resource path="res://assets/models/trumpet/trumpet.tscn" type="PackedScene" id=15]
-[ext_resource path="res://assets/models/xylophone/xylophone.tscn" type="PackedScene" id=16]
-[ext_resource path="res://assets/poster.png" type="Texture" id=17]
+[ext_resource path="res://scenes/instruments/Cello.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/models/flute/flute.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/instruments/Flute.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/models/guitar/guitar.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/instruments/Guitar.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/models/guitar-elec/guitar_elec.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/instruments/GuitarElec.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/models/piano/piano.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/instruments/Rhodes.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/models/saxophone/saxophone.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scenes/instruments/Saxophone.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/models/synth/synth.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/instruments/Organ.tscn" type="PackedScene" id=20]
+[ext_resource path="res://assets/models/trumpet/trumpet.tscn" type="PackedScene" id=21]
+[ext_resource path="res://scenes/instruments/Trumpet.tscn" type="PackedScene" id=22]
+[ext_resource path="res://assets/models/xylophone/xylophone.tscn" type="PackedScene" id=23]
+[ext_resource path="res://scenes/instruments/Vibraphone.tscn" type="PackedScene" id=24]
+[ext_resource path="res://assets/poster.png" type="Texture" id=25]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 30, 1, 30 )
@@ -48,7 +56,7 @@ ambient_light_sky_contribution = 0.0
 size = Vector2( 23, 13 )
 
 [sub_resource type="SpatialMaterial" id=10]
-albedo_texture = ExtResource( 17 )
+albedo_texture = ExtResource( 25 )
 
 [node name="Main" type="Spatial"]
 
@@ -132,65 +140,81 @@ script = ExtResource( 6 )
 input = 6
 
 [node name="Player" parent="Instruments/Contrabass" instance=ExtResource( 7 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.67113, -2.96632, 8.16488 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+instrument = ExtResource( 8 )
+OCTAVES = [ 2 ]
 
-[node name="Flute" parent="Instruments" instance=ExtResource( 8 )]
+[node name="Flute" parent="Instruments" instance=ExtResource( 9 )]
 transform = Transform( 0.0157373, -5.96294e-09, -0.0682081, 0, -0.07, 6.11959e-09, -0.0682081, -1.37579e-09, -0.0157373, 7.82064, 0.7, -2.42839 )
 script = ExtResource( 6 )
 input = 9
 
 [node name="Player" parent="Instruments/Flute" instance=ExtResource( 7 )]
+instrument = ExtResource( 10 )
+OCTAVES = [ 4, 5, 6 ]
 
-[node name="Guitar" parent="Instruments" instance=ExtResource( 9 )]
+[node name="Guitar" parent="Instruments" instance=ExtResource( 11 )]
 transform = Transform( -0.025, 2.18557e-09, 9.55342e-17, 0, -1.09278e-09, 0.025, 2.18557e-09, 0.025, 1.09278e-09, 7.31302, 4.1, -13.977 )
 script = ExtResource( 6 )
 input = 4
 
 [node name="Player" parent="Instruments/Guitar" instance=ExtResource( 7 )]
+instrument = ExtResource( 12 )
+OCTAVES = [ 2, 3, 4, 5 ]
 
-[node name="GuitarElec" parent="Instruments" instance=ExtResource( 10 )]
+[node name="GuitarElec" parent="Instruments" instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.47302, 4.7, -13.993 )
 script = ExtResource( 6 )
 input = 3
 
 [node name="Player" parent="Instruments/GuitarElec" instance=ExtResource( 7 )]
+instrument = ExtResource( 14 )
+OCTAVES = [ 3, 4, 5 ]
 
-[node name="Piano" parent="Instruments" instance=ExtResource( 11 )]
+[node name="Piano" parent="Instruments" instance=ExtResource( 15 )]
 transform = Transform( -0.0899999, 0, -7.86805e-09, 0, 0.09, 0, 7.86804e-09, 0, -0.09, -2.191, 4.216, 12.633 )
 script = ExtResource( 6 )
 input = 1
 
 [node name="Player" parent="Instruments/Piano" instance=ExtResource( 7 )]
-instrument = ExtResource( 12 )
+instrument = ExtResource( 16 )
+OCTAVES = [ 2, 3, 4, 5 ]
 
-[node name="Saxophone" parent="Instruments" instance=ExtResource( 13 )]
+[node name="Saxophone" parent="Instruments" instance=ExtResource( 17 )]
 transform = Transform( -4.80824e-08, 0, 1.1, 0, 1.1, 0, -1.1, 0, -4.80825e-08, 7.42666, 2.5, 1.64179 )
 script = ExtResource( 6 )
 input = 7
 
 [node name="Player" parent="Instruments/Saxophone" instance=ExtResource( 7 )]
+instrument = ExtResource( 18 )
+OCTAVES = [ 2, 3 ]
 
-[node name="Synth" parent="Instruments" instance=ExtResource( 14 )]
+[node name="Synth" parent="Instruments" instance=ExtResource( 19 )]
 transform = Transform( 1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -2.28612, 0.5, -12.612 )
 script = ExtResource( 6 )
 input = 5
 
 [node name="Player" parent="Instruments/Synth" instance=ExtResource( 7 )]
-instrument = ExtResource( 12 )
+instrument = ExtResource( 20 )
+OCTAVES = [ 3, 4, 5, 6 ]
 
-[node name="Trumpet" parent="Instruments" instance=ExtResource( 15 )]
+[node name="Trumpet" parent="Instruments" instance=ExtResource( 21 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 7.97913, 3.27, 4.68478 )
 script = ExtResource( 6 )
 input = 8
 
 [node name="Player" parent="Instruments/Trumpet" instance=ExtResource( 7 )]
+instrument = ExtResource( 22 )
+OCTAVES = [ 3, 4, 5 ]
 
-[node name="Xylophone" parent="Instruments" instance=ExtResource( 16 )]
+[node name="Xylophone" parent="Instruments" instance=ExtResource( 23 )]
 transform = Transform( 0.0263315, -0.0539134, -2.35663e-09, 0, -2.62268e-09, 0.06, -0.0539134, -0.0263315, -1.15098e-09, 5.19922, 3.09187, 9.36634 )
 script = ExtResource( 6 )
 input = 2
 
 [node name="Player" parent="Instruments/Xylophone" instance=ExtResource( 7 )]
+instrument = ExtResource( 24 )
+OCTAVES = [ 3, 4, 5 ]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 8 )

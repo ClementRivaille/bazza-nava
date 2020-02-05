@@ -19,25 +19,25 @@
 [sub_resource type="Resource" id=1]
 script = ExtResource( 3 )
 stream = ExtResource( 4 )
-tone = ""
+tone = "C"
 octave = 3
 
 [sub_resource type="Resource" id=2]
 script = ExtResource( 3 )
 stream = ExtResource( 5 )
-tone = ""
+tone = "C"
 octave = 4
 
 [sub_resource type="Resource" id=3]
 script = ExtResource( 3 )
 stream = ExtResource( 6 )
-tone = ""
+tone = "C"
 octave = 5
 
 [sub_resource type="Resource" id=4]
 script = ExtResource( 3 )
 stream = ExtResource( 7 )
-tone = ""
+tone = "C"
 octave = 6
 
 [sub_resource type="Resource" id=5]

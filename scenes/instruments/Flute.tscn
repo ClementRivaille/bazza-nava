@@ -38,25 +38,25 @@ octave = 6
 [sub_resource type="Resource" id=4]
 script = ExtResource( 3 )
 stream = ExtResource( 7 )
-tone = ""
+tone = "C"
 octave = 4
 
 [sub_resource type="Resource" id=5]
 script = ExtResource( 3 )
 stream = ExtResource( 8 )
-tone = ""
+tone = "C"
 octave = 5
 
 [sub_resource type="Resource" id=6]
 script = ExtResource( 3 )
 stream = ExtResource( 9 )
-tone = ""
+tone = "C"
 octave = 6
 
 [sub_resource type="Resource" id=7]
 script = ExtResource( 3 )
 stream = ExtResource( 10 )
-tone = ""
+tone = "C"
 octave = 7
 
 [sub_resource type="Resource" id=8]
@@ -74,7 +74,7 @@ octave = 5
 [sub_resource type="Resource" id=10]
 script = ExtResource( 3 )
 stream = ExtResource( 13 )
-tone = ""
+tone = "E"
 octave = 6
 
 [sub_resource type="Resource" id=11]
@@ -96,6 +96,7 @@ tone = "F#"
 octave = 6
 
 [node name="Flute" type="AudioStreamPlayer"]
+volume_db = 4.0
 script = ExtResource( 1 )
 __meta__ = {
 "_editor_icon": ExtResource( 2 )

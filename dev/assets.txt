@@ -13,3 +13,4 @@ Philharmonia Orchestra sounds samples
 Epiphone Emily the Strange guitar played and mapped by D. Smolken.
 Percussive organ emulation - Strix SoundFont Team (FreePats project)
 Stereo Rhodes samples by j_e_f_f_g
+Weresax sample library by Karoryfer Lecolds

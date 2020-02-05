@@ -26,7 +26,7 @@ octave = 2
 [sub_resource type="Resource" id=2]
 script = ExtResource( 3 )
 stream = ExtResource( 5 )
-tone = ""
+tone = "C"
 octave = 2
 
 [sub_resource type="Resource" id=3]
@@ -50,7 +50,7 @@ octave = 3
 [sub_resource type="Resource" id=6]
 script = ExtResource( 3 )
 stream = ExtResource( 9 )
-tone = ""
+tone = "C"
 octave = 3
 
 [sub_resource type="Resource" id=7]
@@ -74,7 +74,7 @@ octave = 4
 [sub_resource type="Resource" id=10]
 script = ExtResource( 3 )
 stream = ExtResource( 13 )
-tone = ""
+tone = "C"
 octave = 4
 
 [sub_resource type="Resource" id=11]
@@ -92,7 +92,7 @@ octave = 4
 [sub_resource type="Resource" id=13]
 script = ExtResource( 3 )
 stream = ExtResource( 16 )
-tone = ""
+tone = "C"
 octave = 5
 
 [node name="Cello" type="AudioStreamPlayer"]
