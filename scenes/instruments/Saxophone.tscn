@@ -67,3 +67,5 @@ __meta__ = {
 "_editor_icon": ExtResource( 2 )
 }
 samples = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ]
+sustain = 0.2
+release = 0.2
