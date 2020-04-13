@@ -12,6 +12,8 @@ var sheet_path := "res://assets/sheet.json"
 var measures_left := 0
 var beats_left := 0
 
+var changing_section := false
+
 
 func _ready():
   metronome.connect("beat", self, "on_beat")
@@ -56,14 +58,18 @@ func read_next_section():
 func on_measure():
   measures_left -= 1
   if (measures_left <= 0 && beats_left <= 0):
+    changing_section = true
     read_next_section()
 
 func on_beat(n: int):
   # player.play_random_note()
-  if (measures_left <=0):
-    beats_left -= 1
-    if (beats_left <= 0):
-      read_next_section()
+  if (!changing_section):
+    if (measures_left <=0):
+      beats_left -= 1
+      if (beats_left <= 0):
+        read_next_section()
+  else:
+    changing_section = false
 
 func _read_sheet(source_file: String):
     var file := File.new()

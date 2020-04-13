@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/Conductor.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/instruments/Rhodes.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/void_garden.ogg" type="AudioStream" id=4]
+[ext_resource path="res://assets/bazza-nava.ogg" type="AudioStream" id=4]
 [ext_resource path="res://scripts/MetronomePlayer.gd" type="Script" id=5]
 
 [node name="Conductor" type="Spatial"]
@@ -18,5 +18,4 @@ instrument = ExtResource( 3 )
 [node name="MetronomePlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 script = ExtResource( 5 )
-bpm = 140
-beats_in_measure = 5
+bpm = 82
