@@ -2,8 +2,8 @@
 
 [sub_resource type="AudioEffectCompressor" id=2]
 resource_name = "Compressor"
-threshold = -14.0
-ratio = 2.6
+threshold = -10.0
+ratio = 3.0
 sidechain = "Music"
 
 [sub_resource type="AudioEffectEQ" id=3]

@@ -9,6 +9,8 @@
 [node name="guitar" parent="." index="0"]
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
+contacts_reported = 1
+contact_monitor = true
 
 [node name="guitar" parent="guitar" index="0"]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )

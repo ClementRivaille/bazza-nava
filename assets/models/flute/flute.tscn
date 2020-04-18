@@ -9,6 +9,8 @@
 [node name="flute" parent="." index="0"]
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
+contacts_reported = 1
+contact_monitor = true
 
 [node name="flute" parent="flute" index="0"]
 material/0 = ExtResource( 3 )

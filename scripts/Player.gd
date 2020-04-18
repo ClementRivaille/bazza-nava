@@ -18,6 +18,10 @@ var last_note: int
 var last_octave: int = 0
 var repeat: int = 0
 
+# volume
+var bus_index :int
+var amplifier: AudioEffectAmplify
+
 var MAX_REPEAT := 2
 export(Array, int) var OCTAVES := [3,4]
 
@@ -25,13 +29,24 @@ onready var melody_timer: Timer = $MelodyTimer
 
 func _enter_tree():
   add_to_group("player")
+  
+func _init():
+  # create an audio bus
+  bus_index = AudioServer.get_bus_count()
+  AudioServer.add_bus(bus_index)
+  AudioServer.set_bus_name(bus_index, 'player' + str(bus_index))
+  amplifier = AudioEffectAmplify.new()
+  AudioServer.add_bus_effect(bus_index, amplifier)
 
 func _ready():
   sampler = instrument.instance()
+  # Put custom bus between sampler's one
+  AudioServer.set_bus_send(bus_index, sampler.bus)
+  sampler.bus = AudioServer.get_bus_name(bus_index)
+  
   add_child(sampler)
   musicTheory = get_node("/root/MusicTheory")
   calculator = get_node("/root/NoteValue")
-  randomize()
 
 func set_harmony(base: String, scale: int, modifiers: Array = []):
   currentBase = base
@@ -74,7 +89,7 @@ func _select_octave(last_note: String, next_note: String) -> int:
   else:
     return OCTAVES[randi()%OCTAVES.size()]
 
-func play_random_note():
+func play_random_note(muffled: bool = false):
   var r_note := _get_random_note()
   if r_note == last_note:
     repeat += 1
@@ -91,6 +106,11 @@ func play_random_note():
   
   var note_name := calculator.get_note_name(note_value)
   var octave := _select_octave(previous_note_name, note_name)
+  
+  if (muffled):
+    amplifier.volume_db = -9
+  else:
+    amplifier.volume_db = 0
   
   sampler.play_note(note_name, octave)
   melody_timer.start()

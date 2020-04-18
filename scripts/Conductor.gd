@@ -21,6 +21,7 @@ func _ready():
 
   _read_sheet(sheet_path)
 
+  randomize()
   start_song()
 
 func start_song():

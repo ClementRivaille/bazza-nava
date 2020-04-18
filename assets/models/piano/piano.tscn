@@ -11,6 +11,8 @@ transform = Transform( -0.386765, 0.922178, 0, -0.922178, -0.386765, 0, 0, 0, 1,
 [node name="piano" parent="." index="0"]
 physics_material_override = ExtResource( 2 )
 gravity_scale = 0.0
+contacts_reported = 1
+contact_monitor = true
 
 [node name="Yamaha_psr_e_343Ypsr343_Dynam" parent="piano" index="3"]
 material/0 = ExtResource( 3 )
