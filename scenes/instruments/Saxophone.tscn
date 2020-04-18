@@ -61,7 +61,8 @@ tone = "F"
 octave = 2
 
 [node name="Saxophone" type="AudioStreamPlayer"]
-volume_db = -14.795
+volume_db = -11.0
+bus = "Instruments"
 script = ExtResource( 1 )
 __meta__ = {
 "_editor_icon": ExtResource( 2 )

@@ -82,7 +82,8 @@ tone = "E"
 octave = 5
 
 [node name="Rhodes" type="AudioStreamPlayer"]
-volume_db = -6.731
+volume_db = -8.0
+bus = "Instruments"
 script = ExtResource( 1 )
 __meta__ = {
 "_editor_icon": ExtResource( 2 )

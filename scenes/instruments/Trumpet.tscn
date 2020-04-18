@@ -89,6 +89,8 @@ tone = "G"
 octave = 5
 
 [node name="Trumpet" type="AudioStreamPlayer"]
+volume_db = 2.0
+bus = "Instruments"
 script = ExtResource( 1 )
 __meta__ = {
 "_editor_icon": ExtResource( 2 )

@@ -138,6 +138,8 @@ tone = "G"
 octave = 5
 
 [node name="Guitar" type="AudioStreamPlayer"]
+volume_db = -6.371
+bus = "Instruments"
 script = ExtResource( 1 )
 __meta__ = {
 "_editor_icon": ExtResource( 2 )

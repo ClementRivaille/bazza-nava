@@ -90,6 +90,7 @@ octave = 6
 
 [node name="Organ" type="AudioStreamPlayer"]
 volume_db = -8.387
+bus = "Instruments"
 script = ExtResource( 1 )
 __meta__ = {
 "_editor_icon": ExtResource( 2 )

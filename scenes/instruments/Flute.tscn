@@ -97,6 +97,7 @@ octave = 6
 
 [node name="Flute" type="AudioStreamPlayer"]
 volume_db = 4.0
+bus = "Instruments"
 script = ExtResource( 1 )
 __meta__ = {
 "_editor_icon": ExtResource( 2 )

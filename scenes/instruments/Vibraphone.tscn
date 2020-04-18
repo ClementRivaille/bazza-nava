@@ -1,7 +1,7 @@
 [gd_scene load_steps=32 format=2]
 
-[ext_resource path="res://addons/SimpleSampler/sampler.gd" type="Script" id=1]
-[ext_resource path="res://addons/SimpleSampler/sampler_icon.png" type="Texture" id=2]
+[ext_resource path="res://addons/SimpleSampler/multisampler.gd" type="Script" id=1]
+[ext_resource path="res://addons/SimpleSampler/multisampler_icon.png" type="Texture" id=2]
 [ext_resource path="res://addons/SimpleSampler/sample_resource.gd" type="Script" id=3]
 [ext_resource path="res://assets/sounds/vibraphone/Vibraphone.sustain.ff.A3.wav" type="AudioStream" id=4]
 [ext_resource path="res://assets/sounds/vibraphone/Vibraphone.sustain.ff.A4.wav" type="AudioStream" id=5]
@@ -103,11 +103,13 @@ tone = "G"
 octave = 5
 
 [node name="Vibraphone" type="AudioStreamPlayer"]
-volume_db = -10.286
+volume_db = -11.0
+bus = "Instruments"
 script = ExtResource( 1 )
 __meta__ = {
 "_editor_icon": ExtResource( 2 )
 }
 samples = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ]
-sustain = 2.0
+sustain = 1.5
 release = 2.0
+max_notes = 5

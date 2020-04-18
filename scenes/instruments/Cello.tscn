@@ -96,6 +96,8 @@ tone = "C"
 octave = 5
 
 [node name="Cello" type="AudioStreamPlayer"]
+volume_db = -7.428
+bus = "Instruments"
 script = ExtResource( 1 )
 __meta__ = {
 "_editor_icon": ExtResource( 2 )

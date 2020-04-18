@@ -2,6 +2,9 @@ extends AudioStreamPlayer
 class_name Multisampler
 
 export(Array, AudioStreamSample) var samples: Array
+export(float) var sustain := -1.0
+export(float) var release := -1.0
+
 export(int) var max_notes:= 1
 
 var samplers := []
@@ -13,7 +16,10 @@ func _ready():
   for i in range(max_notes):
     var sampler := Sampler.new()
     sampler.samples = samples
+    sampler.sustain = sustain
+    sampler.release = release
     sampler.volume_db = volume_db
+    sampler.bus = bus
     
     add_child(sampler)
     samplers.append(sampler)
