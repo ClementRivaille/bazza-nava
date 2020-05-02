@@ -1,0 +1,10 @@
+[gd_resource type="AudioEffectEQ6" format=2]
+
+[resource]
+resource_name = "EQ6"
+band_db/32_hz = 2.1
+band_db/100_hz = 11.5
+band_db/320_hz = 1.1
+band_db/1000_hz = 11.1
+band_db/3200_hz = -28.2
+band_db/10000_hz = -34.5

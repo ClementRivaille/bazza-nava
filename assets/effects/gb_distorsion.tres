@@ -1,0 +1,7 @@
+[gd_resource type="AudioEffectDistortion" format=2]
+
+[resource]
+resource_name = "Distortion"
+mode = 4
+keep_hf_hz = 20000.0
+drive = 0.9

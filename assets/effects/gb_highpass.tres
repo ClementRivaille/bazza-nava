@@ -1,0 +1,7 @@
+[gd_resource type="AudioEffectHighPassFilter" format=2]
+
+[resource]
+resource_name = "HighPassFilter"
+cutoff_hz = 1000.0
+resonance = 0.9
+db = 3

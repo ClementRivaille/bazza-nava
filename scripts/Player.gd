@@ -18,9 +18,10 @@ var last_note: int
 var last_octave: int = 0
 var repeat: int = 0
 
+
 # volume
-var bus_index :int
 var amplifier: AudioEffectAmplify
+var p_index: int
 
 var MAX_REPEAT := 2
 export(Array, int) var OCTAVES := [3,4]
@@ -32,15 +33,16 @@ func _enter_tree():
   
 func _init():
   # create an audio bus
-  bus_index = AudioServer.get_bus_count()
-  AudioServer.add_bus(bus_index)
-  AudioServer.set_bus_name(bus_index, 'player' + str(bus_index))
+  p_index = AudioServer.get_bus_count()
+  AudioServer.add_bus(p_index)
+  AudioServer.set_bus_name(p_index, 'player' + str(p_index))
   amplifier = AudioEffectAmplify.new()
-  AudioServer.add_bus_effect(bus_index, amplifier)
+  AudioServer.add_bus_effect(p_index, amplifier)
 
 func _ready():
   sampler = instrument.instance()
   # Put custom bus between sampler's one
+  var bus_index := AudioServer.get_bus_index('player' + str(p_index))
   AudioServer.set_bus_send(bus_index, sampler.bus)
   sampler.bus = AudioServer.get_bus_name(bus_index)
   

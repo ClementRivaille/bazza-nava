@@ -1,0 +1,11 @@
+[gd_resource type="AudioEffectReverb" format=2]
+
+[resource]
+resource_name = "Reverb"
+predelay_msec = 300.0
+room_size = 0.09
+damping = 0.61
+spread = 0.36
+hipass = 0.1
+dry = 0.91
+wet = 0.25

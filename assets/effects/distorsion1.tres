@@ -1,0 +1,8 @@
+[gd_resource type="AudioEffectDistortion" format=2]
+
+[resource]
+resource_name = "Distortion"
+mode = 4
+pre_gain = 4.18
+drive = 0.64
+post_gain = -6.73

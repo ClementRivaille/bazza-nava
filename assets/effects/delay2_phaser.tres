@@ -1,0 +1,9 @@
+[gd_resource type="AudioEffectPhaser" format=2]
+
+[resource]
+resource_name = "Phaser"
+range_min_hz = 455.075
+range_max_hz = 2450.3
+rate_hz = 1.35
+feedback = 0.6
+depth = 0.7

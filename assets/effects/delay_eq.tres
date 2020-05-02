@@ -1,0 +1,9 @@
+[gd_resource type="AudioEffectEQ" format=2]
+
+[resource]
+band_db/32_hz = -35.6
+band_db/100_hz = -27.1
+band_db/320_hz = -12.9
+band_db/1000_hz = -3.1
+band_db/3200_hz = -6.7
+band_db/10000_hz = -10.6

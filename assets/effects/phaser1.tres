@@ -1,0 +1,6 @@
+[gd_resource type="AudioEffectPhaser" format=2]
+
+[resource]
+resource_name = "Phaser"
+range_max_hz = 2000.0
+rate_hz = 1.6

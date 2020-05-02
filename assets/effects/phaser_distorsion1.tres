@@ -1,0 +1,7 @@
+[gd_resource type="AudioEffectPhaser" format=2]
+
+[resource]
+resource_name = "Phaser"
+rate_hz = 0.25
+feedback = 0.4
+depth = 0.9

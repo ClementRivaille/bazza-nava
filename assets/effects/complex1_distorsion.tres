@@ -1,0 +1,6 @@
+[gd_resource type="AudioEffectDistortion" format=2]
+
+[resource]
+resource_name = "Distortion"
+mode = 2
+drive = 0.66

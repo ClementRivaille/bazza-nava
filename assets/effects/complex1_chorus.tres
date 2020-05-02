@@ -1,0 +1,6 @@
+[gd_resource type="AudioEffectChorus" format=2]
+
+[resource]
+resource_name = "Chorus"
+dry = 0.73
+wet = 0.33
