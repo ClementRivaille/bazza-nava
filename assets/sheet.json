@@ -274,7 +274,8 @@
     { "beats": 2, "section": 10 },
     { "beats": 2, "section": 11 },
     
-    { "measures": 4, "section": 29 }
+    { "measures": 4, "section": 29 },
+    { "measures": 2, "section": 29 }
   ]
 }
 

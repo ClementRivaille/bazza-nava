@@ -1,7 +1,12 @@
 extends Spatial
 class_name Conductor
 
-onready var player: Player = $Player
+signal end_intro
+signal end_song
+
+export(int) var intro_length := 2
+export(int) var outro_length := 2
+
 onready var metronome: MetronomePlayer = $MetronomePlayer
 onready var music_theory: MusicTheory = get_node("/root/MusicTheory")
 onready var calculator: NoteValueCalculator = get_node("/root/NoteValue")
@@ -13,6 +18,7 @@ var measures_left := 0
 var beats_left := 0
 
 var changing_section := false
+var intro := false
 
 
 func _ready():
@@ -22,7 +28,6 @@ func _ready():
   _read_sheet(sheet_path)
 
   randomize()
-  start_song()
 
 func start_song():
   get_tree().call_group("player", "set_harmony", sheet.root, sheet.mode)
@@ -30,6 +35,7 @@ func start_song():
   metronome.play()
 
   read_next_section()
+  intro = true
 
 func read_next_section():
   var next_segment := sheet.get_next_segment()
@@ -53,8 +59,13 @@ func read_next_section():
 
   measures_left = next_segment.measures
   beats_left = next_segment.beats
+  if (sheet.is_last_segment()):
+    emit_signal("end_song")
   sheet.change_segment()
-
+  
+  if (intro):
+    intro = false
+    emit_signal("end_intro")
 
 func on_measure():
   measures_left -= 1
@@ -63,7 +74,6 @@ func on_measure():
     read_next_section()
 
 func on_beat(n: int):
-  # player.play_random_note()
   if (!changing_section):
     if (measures_left <=0):
       beats_left -= 1
@@ -87,3 +97,8 @@ func _read_sheet(source_file: String):
       get_tree().quit()
 
     sheet = MusicSheet.new(dict.result)
+    
+func get_intro_time() -> float:
+  return metronome.beat_length * metronome.beats_in_measure * intro_length
+func get_outro_time() -> float:
+  return metronome.beat_length * metronome.beats_in_measure * outro_length

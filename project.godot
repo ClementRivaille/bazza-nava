@@ -19,6 +19,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/FiltersManager.gd"
 }, {
+"base": "Spatial",
+"class": "GameManager",
+"language": "GDScript",
+"path": "res://scripts/GameManager.gd"
+}, {
 "base": "Node",
 "class": "Instrument",
 "language": "GDScript",
@@ -82,6 +87,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Conductor": "",
 "FiltersManager": "",
+"GameManager": "",
 "Instrument": "",
 "Main": "",
 "MetronomePlayer": "",
@@ -188,6 +194,11 @@ enabled=PoolStringArray( "SimpleSampler" )
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777359,"unicode":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":231,"unicode":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":57,"unicode":0,"echo":false,"script":null)
+ ]
+}
+toggle_collisions={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":67,"unicode":0,"echo":false,"script":null)
  ]
 }
 

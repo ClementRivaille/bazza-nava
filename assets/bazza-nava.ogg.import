@@ -11,5 +11,5 @@ dest_files=[ "res://.import/bazza-nava.ogg-2a703d03a731067382a7a105646564f2.oggs
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

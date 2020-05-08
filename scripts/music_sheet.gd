@@ -23,6 +23,9 @@ func get_section(idx: int) -> Section:
 
 func change_segment():
   next_segment = (next_segment + 1) % score.size()
+
+func is_last_segment() -> bool:
+  return next_segment == score.size() - 1
   
 func restart():
   next_segment = 0

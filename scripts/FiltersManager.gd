@@ -16,7 +16,6 @@ var EFFECT_BUS_PREFIX = 'effect'
 func _ready():
   # Create effect buses
   for effects_idx in range(audio_effects.size()):
-    print(effects_idx)
     AudioServer.add_bus(1)
     AudioServer.set_bus_name(1, EFFECT_BUS_PREFIX + str(effects_idx))
     var effects_list: Array = audio_effects[effects_idx]

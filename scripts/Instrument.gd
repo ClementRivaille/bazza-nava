@@ -3,6 +3,7 @@ class_name Instrument
 
 var body: RigidBody
 var timer: Timer
+var tween: Tween
 
 export(int, 0, 9) var input: int
 
@@ -13,6 +14,9 @@ var previous_collide: Node
 var FORCE: float = 15.0
 var COLLISION_DELAY = 0.1
 var PLAYING_DELAY = 1.5
+
+var activated := false
+var collision_sound := true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,9 +32,14 @@ func _ready():
   timer.wait_time = COLLISION_DELAY
   add_child(timer)
   timer.connect("timeout", self, "unlock_collision")
+  
+  tween = Tween.new()
+  add_child(tween)
+  
+  add_to_group("instrument")
 
 func _input(event):
-  if event.is_action_pressed(str(input)):
+  if activated && event.is_action_pressed(str(input)):
     body.angular_velocity = Vector3(0,0,0)
     body.linear_velocity = Vector3(0,0,0)
     
@@ -49,7 +58,7 @@ func _input(event):
     timer.start()
 
 func on_collide(body: Node):
-  if (!collision_lock && previous_collide != body):
+  if (collision_sound && !collision_lock && previous_collide != body):
     player.play_random_note(true)
     
     previous_collide = body
@@ -62,3 +71,17 @@ func on_collide(body: Node):
 func unlock_collision():
   collision_lock = false
   timer.wait_time = COLLISION_DELAY
+  
+func set_activated(val: bool):
+  activated = val
+  
+func set_collision_sound(val: bool):
+  collision_sound = val
+  
+func activate_gravity(time: float):
+  tween.interpolate_property(body, "gravity_scale", 0, 1,
+    time, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+  tween.start()
+
+func deactivate_gravity():
+  body.gravity_scale = 0
