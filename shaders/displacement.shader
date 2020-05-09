@@ -3,7 +3,7 @@
 shader_type canvas_item;
 
 // displacement amount
-uniform float DISP_SCALE = 2.0;
+uniform float DISP_SCALE = 2.5;
 
 // chromatic dispersion samples
 uniform int SAMPLES = 128;
@@ -13,7 +13,7 @@ uniform float SIGMOID_CONTRAST = 12.0;
 
 
 vec3 contrast(vec3 x) {
-	return 1.0 / (1.0 + exp(-SIGMOID_CONTRAST * (x - 0.5)));    
+	return 1.0 / (1.0 + exp(-SIGMOID_CONTRAST * (x - 0.65)));    
 }
 
 vec2 normz(vec2 x) {
@@ -73,7 +73,7 @@ void fragment(){
     vec2 d_w = texture(TEXTURE, fract(uv+w)).xy; 
 
     // antialias our vector field by blurring
-    vec2 db = 0.4 * d + 0.15 * (d_n+d_e+d_s+d_w);
+    vec2 db = 0.3 * d + 0.1 * (d_n+d_e+d_s+d_w);
 
     float ld = length(db);
     vec2 ln = normz(db);

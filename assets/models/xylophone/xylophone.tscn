@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/instrument_physics_material.tres" type="PhysicsMaterial" id=2]
 [ext_resource path="res://assets/models/xylophone/_17313_Xylophone_V1wire_115115115.material" type="Material" id=3]
 
-[node name="Xylophone" index="0" instance=ExtResource( 1 )]
+[node name="Xylophone" instance=ExtResource( 1 )]
 
 [node name="xylophone" parent="." index="0"]
 physics_material_override = ExtResource( 2 )
