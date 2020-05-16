@@ -1,6 +1,12 @@
 extends Spatial
 class_name GameManager
 
+signal start
+signal intro_end
+signal end
+signal restart
+signal toggle_collision_sound
+
 onready var conductor: Conductor = $Conductor
 onready var camera: Camera = $Camera
 onready var lights: LightsManager = $Lights
@@ -27,6 +33,7 @@ func _input(event: InputEvent):
     if event.is_action_pressed("ui_accept"):
       conductor.start_song()
       started = true
+      emit_signal("start")
       
       # Move camera
       var camera_new_position: Vector3 = Vector3() + camera.transform.origin
@@ -44,14 +51,17 @@ func _input(event: InputEvent):
       get_tree().call_group("instrument", "set_activated", true)
       get_tree().call_group("instrument", "deactivate_gravity")
       lights.turn_on()
+      emit_signal("restart")
       
   if event.is_action_pressed("toggle_collisions"):
     collision_sound = !collision_sound
     get_tree().call_group("instrument", "set_collision_sound", collision_sound)
+    emit_signal("toggle_collision_sound", collision_sound)
   
 func _on_intro_end():
   # After intro, activate players
   get_tree().call_group("instrument", "set_activated", true)
+  emit_signal("intro_end")
 
 func _on_song_end():
   # After intro, activate players
@@ -59,3 +69,4 @@ func _on_song_end():
   get_tree().call_group("instrument", "activate_gravity", conductor.get_outro_time())
   lights.fade_off(conductor.get_outro_time())
   finished = true
+  emit_signal("end")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://scripts/FiltersManager.gd" type="Script" id=1]
 [ext_resource path="res://shaders/sine_wave.shader" type="Shader" id=2]
@@ -31,6 +31,8 @@
 [ext_resource path="res://assets/effects/complex1_chorus.tres" type="AudioEffectChorus" id=29]
 [ext_resource path="res://assets/effects/complex1_reverb.tres" type="AudioEffectReverb" id=30]
 [ext_resource path="res://scenes/Main.tscn" type="PackedScene" id=31]
+[ext_resource path="res://scripts/UI.gd" type="Script" id=32]
+[ext_resource path="res://scenes/DynamicText.tscn" type="PackedScene" id=33]
 
 [sub_resource type="ShaderMaterial" id=1]
 
@@ -55,3 +57,79 @@ handle_input_locally = false
 render_target_update_mode = 3
 
 [node name="Main" parent="FiltersManager/Viewport" instance=ExtResource( 31 )]
+
+[node name="UI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 32 )
+
+[node name="PressStart" parent="UI" instance=ExtResource( 33 )]
+text = "Press Enter"
+blinking = true
+
+[node name="Rules" parent="UI" instance=ExtResource( 33 )]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_top = 0.7
+anchor_bottom = 0.8
+rect_scale = Vector2( 0.8, 0.8 )
+rect_pivot_offset = Vector2( 640, 0 )
+display_on_start = false
+text = "Use keys from 1 to 9 to play the instruments"
+fade_time = 1.2
+
+[node name="Rules2" parent="UI" instance=ExtResource( 33 )]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_top = 0.7
+anchor_bottom = 0.8
+rect_scale = Vector2( 0.8, 0.8 )
+rect_pivot_offset = Vector2( 640, 0 )
+display_on_start = false
+text = "You can use Space to toggle bouncing sounds"
+fade_time = 1.2
+
+[node name="Quit" parent="UI" instance=ExtResource( 33 )]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_top = 0.2
+anchor_bottom = 0.3
+display_on_start = false
+text = "Hold ESC to quit"
+
+[node name="Restart" parent="UI" instance=ExtResource( 33 )]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_bottom = 60.0
+display_on_start = false
+text = "Press Enter to play again"
+fade_time = 3.0
+
+[node name="Bouncing" parent="UI" instance=ExtResource( 33 )]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 20.0
+margin_top = 10.0
+display_on_start = false
+text = "Bouncing sounds disabled"
+fade_time = 0.1
+
+[node name="RulesTimer" type="Timer" parent="UI"]
+wait_time = 5.0
+one_shot = true
+
+[node name="BouncingTimer" type="Timer" parent="UI"]
+wait_time = 2.0
+one_shot = true
+
+[node name="BounceRuleTimer" type="Timer" parent="UI"]
+wait_time = 20.0
+one_shot = true
+[connection signal="end" from="FiltersManager/Viewport/Main" to="UI" method="display_end"]
+[connection signal="intro_end" from="FiltersManager/Viewport/Main" to="UI" method="show_rules"]
+[connection signal="restart" from="FiltersManager/Viewport/Main" to="UI" method="hide_end"]
+[connection signal="start" from="FiltersManager/Viewport/Main" to="UI" method="remove_start"]
+[connection signal="toggle_collision_sound" from="FiltersManager/Viewport/Main" to="UI" method="set_bouncing"]

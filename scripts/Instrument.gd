@@ -84,4 +84,6 @@ func activate_gravity(time: float):
   tween.start()
 
 func deactivate_gravity():
+  if tween.is_active():
+    tween.stop_all()
   body.gravity_scale = 0
