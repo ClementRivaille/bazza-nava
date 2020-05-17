@@ -48,7 +48,7 @@ func display():
     return
   
   # Tween self modulate
-  tween.stop_all()
+  tween.remove_all()
   tween.interpolate_property(self, "modulate", Color(1,1,1,0), Color(1,1,1,1),
     fade_time, Tween.TRANS_CUBIC, Tween.EASE_OUT)
   # If blinking, start blink once fading is over
@@ -70,7 +70,7 @@ func hide():
       tween.disconnect("tween_all_completed", self, "blink_out")
   
   # fade
-  tween.stop_all()
+  tween.remove_all()
   tween.interpolate_property(self, "modulate", modulate, Color(1,1,1,0),
     fade_time, Tween.TRANS_CUBIC, Tween.EASE_OUT)
   tween.start()
