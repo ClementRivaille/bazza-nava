@@ -10,9 +10,9 @@ anchor_bottom = 0.9
 script = ExtResource( 1 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 341.0
-margin_right = 938.0
-margin_bottom = 60.0
+margin_left = 880.0
+margin_right = 1040.0
+margin_bottom = 80.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
@@ -20,7 +20,7 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 0.392157 )
 custom_constants/shadow_offset_x = -3
 custom_constants/shadow_offset_y = 3
 custom_constants/shadow_as_outline = 0
-text = "Press Enter or Space"
+text = "Text"
 align = 1
 valign = 1
 

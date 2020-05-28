@@ -86,6 +86,10 @@ func _input(event):
   if event.is_action_released("ui_cancel"):
     # Cancel exit animation
     exit.cancel()
+  
+  # toggle fullscreen
+  if event.is_action_pressed("fullscreen"):
+    OS.window_fullscreen = !OS.window_fullscreen
     
 func hide_quit():
   quit.hide()
