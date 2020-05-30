@@ -6,7 +6,7 @@ shader_type canvas_item;
 uniform float DISP_SCALE = 2.5;
 
 // chromatic dispersion samples
-uniform int SAMPLES = 128;
+uniform int SAMPLES = 100;
 
 // contrast
 uniform float SIGMOID_CONTRAST = 12.0;
