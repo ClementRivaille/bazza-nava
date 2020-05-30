@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://scripts/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Conductor.tscn" type="PackedScene" id=2]
@@ -27,6 +27,8 @@
 [ext_resource path="res://scenes/instruments/Vibraphone.tscn" type="PackedScene" id=25]
 [ext_resource path="res://assets/poster-v2.png" type="Texture" id=26]
 [ext_resource path="res://scripts/LightsManager.gd" type="Script" id=27]
+[ext_resource path="res://assets/small_poster.png" type="Texture" id=28]
+[ext_resource path="res://assets/art2.png" type="Texture" id=29]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 30, 1, 30 )
@@ -49,7 +51,9 @@ extents = Vector3( 0.5, 7.5, 15 )
 [sub_resource type="ProceduralSky" id=7]
 
 [sub_resource type="Environment" id=8]
+background_mode = 1
 background_sky = SubResource( 7 )
+background_color = Color( 0.611765, 0.67451, 1, 1 )
 ambient_light_color = Color( 1, 1, 1, 1 )
 ambient_light_energy = 0.1
 ambient_light_sky_contribution = 0.0
@@ -59,6 +63,22 @@ size = Vector2( 23, 13 )
 
 [sub_resource type="SpatialMaterial" id=10]
 albedo_texture = ExtResource( 26 )
+
+[sub_resource type="CubeMesh" id=11]
+size = Vector3( 0.5, 2, 2 )
+
+[sub_resource type="PlaneMesh" id=12]
+size = Vector2( 4, 6 )
+
+[sub_resource type="SpatialMaterial" id=13]
+albedo_texture = ExtResource( 28 )
+
+[sub_resource type="SpatialMaterial" id=14]
+albedo_texture = ExtResource( 29 )
+
+[sub_resource type="PlaneMesh" id=15]
+material = SubResource( 14 )
+size = Vector2( 7, 5 )
 
 [node name="Main" type="Spatial"]
 script = ExtResource( 1 )
@@ -263,3 +283,42 @@ omni_range = 18.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 12, 10 )
 light_energy = 0.9
 omni_range = 18.0
+
+[node name="Decorations" type="Spatial" parent="."]
+
+[node name="Lamps" type="Spatial" parent="Decorations"]
+
+[node name="lamp1" type="MeshInstance" parent="Decorations/Lamps"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 15.43, -10 )
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="lamp2" type="MeshInstance" parent="Decorations/Lamps"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 15.43, 10 )
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="lamp3" type="MeshInstance" parent="Decorations/Lamps"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 15.43, 0 )
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="lamp4" type="MeshInstance" parent="Decorations/Lamps"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 15.43, 10 )
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="lamp5" type="MeshInstance" parent="Decorations/Lamps"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 15.43, -10 )
+mesh = SubResource( 11 )
+material/0 = null
+
+[node name="smallposter" type="MeshInstance" parent="Decorations"]
+transform = Transform( 0.999548, -1.31461e-09, -0.0300747, -0.0300747, -4.36916e-08, -0.999548, 0, 1, -4.37114e-08, -6.20505, 8.1064, -14.4945 )
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="art" type="MeshInstance" parent="Decorations"]
+transform = Transform( -1, -8.74228e-08, -4.37114e-08, 4.37114e-08, 1.91069e-15, -1, 8.74228e-08, -1, 1.91069e-15, 1.24141, 8.55465, 14.4969 )
+mesh = SubResource( 15 )
+material/0 = null
