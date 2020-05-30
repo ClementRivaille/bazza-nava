@@ -25,7 +25,7 @@
 [ext_resource path="res://scenes/instruments/Trumpet.tscn" type="PackedScene" id=23]
 [ext_resource path="res://assets/models/xylophone/xylophone.tscn" type="PackedScene" id=24]
 [ext_resource path="res://scenes/instruments/Vibraphone.tscn" type="PackedScene" id=25]
-[ext_resource path="res://assets/poster.png" type="Texture" id=26]
+[ext_resource path="res://assets/poster-v2.png" type="Texture" id=26]
 [ext_resource path="res://scripts/LightsManager.gd" type="Script" id=27]
 
 [sub_resource type="CubeMesh" id=1]
