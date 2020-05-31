@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://scripts/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Conductor.tscn" type="PackedScene" id=2]
@@ -29,9 +29,15 @@
 [ext_resource path="res://scripts/LightsManager.gd" type="Script" id=27]
 [ext_resource path="res://assets/small_poster.png" type="Texture" id=28]
 [ext_resource path="res://assets/art2.png" type="Texture" id=29]
+[ext_resource path="res://assets/models/amplifier/Amplifier.tscn" type="PackedScene" id=30]
+[ext_resource path="res://assets/models/chair/chair.tscn" type="PackedScene" id=31]
+[ext_resource path="res://assets/models/table/table.tscn" type="PackedScene" id=32]
+[ext_resource path="res://assets/models/stool/Stool.tscn" type="PackedScene" id=33]
+[ext_resource path="res://assets/models/PianoStand/PianoStand.tscn" type="PackedScene" id=34]
+[ext_resource path="res://assets/models/vibraphoneStand/Vibraphone Stand.tscn" type="PackedScene" id=35]
 
 [sub_resource type="CubeMesh" id=1]
-size = Vector3( 30, 1, 30 )
+size = Vector3( 30, 1.1, 30 )
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 15, 0.5, 15 )
@@ -90,11 +96,12 @@ script = ExtResource( 1 )
 [node name="Floor" type="StaticBody" parent="Walls"]
 
 [node name="MeshInstance" type="MeshInstance" parent="Walls/Floor"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.020752, -0.036499, 0.0240021 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.021, -0.085, 0.024 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Walls/Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0352297, 0 )
 shape = SubResource( 2 )
 
 [node name="Roof" type="StaticBody" parent="Walls"]
@@ -150,10 +157,9 @@ fov = 45.0
 size = 16.0
 
 [node name="Instruments" type="Spatial" parent="."]
-editor/display_folded = true
 
 [node name="Contrabass" parent="Instruments" instance=ExtResource( 6 )]
-transform = Transform( -5.24537e-08, 0, -1.2, 0, 1.2, 0, 1.2, 0, -5.24537e-08, 7.61409, 3.46772, -8.53501 )
+transform = Transform( -5.24537e-08, 0, -1.2, 0, 1.2, 0, 1.2, 0, -5.24537e-08, 7.61409, 3.46772, -7.9498 )
 script = ExtResource( 7 )
 input = 6
 
@@ -163,8 +169,7 @@ instrument = ExtResource( 9 )
 OCTAVES = [ 2 ]
 
 [node name="Flute" parent="Instruments" instance=ExtResource( 10 )]
-editor/display_folded = true
-transform = Transform( 0.0157373, -5.96294e-09, -0.0682081, 0, -0.07, 6.11959e-09, -0.0682081, -1.37579e-09, -0.0157373, 7.82064, 0.7, -2.42839 )
+transform = Transform( 0.0102403, -6.05376e-09, -0.069247, 0, -0.07, 6.11959e-09, -0.069247, -8.95223e-10, -0.0102403, -6.40609, 4.39627, -11.9183 )
 script = ExtResource( 7 )
 input = 9
 
@@ -173,8 +178,7 @@ instrument = ExtResource( 11 )
 OCTAVES = [ 4, 5, 6 ]
 
 [node name="Guitar" parent="Instruments" instance=ExtResource( 12 )]
-editor/display_folded = true
-transform = Transform( -0.025, 2.18557e-09, 9.55342e-17, 0, -1.09278e-09, 0.025, 2.18557e-09, 0.025, 1.09278e-09, 7.31302, 4.1, -13.977 )
+transform = Transform( -0.0206528, -0.0130231, 0.0053721, 0, 0.00953337, 0.0231109, -0.0140876, 0.0190922, -0.00787564, 7.66247, 6.39709, -12.9273 )
 script = ExtResource( 7 )
 input = 4
 
@@ -183,7 +187,7 @@ instrument = ExtResource( 13 )
 OCTAVES = [ 2, 3, 4, 5 ]
 
 [node name="GuitarElec" parent="Instruments" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3.47302, 4.7, -13.993 )
+transform = Transform( 0.996617, 0.082188, -3.59255e-09, 0, -4.37114e-08, -1, -0.082188, 0.996617, -4.35635e-08, 3.47302, 4.7, -10.2732 )
 script = ExtResource( 7 )
 input = 5
 
@@ -192,8 +196,7 @@ instrument = ExtResource( 15 )
 OCTAVES = [ 3, 4, 5 ]
 
 [node name="Piano" parent="Instruments" instance=ExtResource( 16 )]
-editor/display_folded = true
-transform = Transform( -0.0899999, 0, -7.86805e-09, 0, 0.09, 0, 7.86804e-09, 0, -0.09, -2.191, 4.216, 12.633 )
+transform = Transform( -0.0899999, 0, 7.86805e-09, 0, 0.09, 0, -7.86804e-09, 0, -0.09, -5.80262, 4.64779, 12.3391 )
 script = ExtResource( 7 )
 input = 1
 
@@ -203,7 +206,7 @@ OCTAVES = [ 2, 3, 4, 5 ]
 
 [node name="Saxophone" parent="Instruments" instance=ExtResource( 18 )]
 editor/display_folded = true
-transform = Transform( -4.80824e-08, 0, 1.1, 0, 1.1, 0, -1.1, 0, -4.80825e-08, 7.42666, 2.5, 1.64179 )
+transform = Transform( -4.80824e-08, 0, 1.1, 0, 1.1, 0, -1.1, 0, -4.80825e-08, 7.42666, 2.5, 9.3 )
 script = ExtResource( 7 )
 input = 7
 
@@ -212,8 +215,7 @@ instrument = ExtResource( 19 )
 OCTAVES = [ 2, 3 ]
 
 [node name="Synth" parent="Instruments" instance=ExtResource( 20 )]
-editor/display_folded = true
-transform = Transform( 1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, -2.28612, 0.5, -12.612 )
+transform = Transform( 1.79995, 0, 0.013007, 0, 1.8, 0, -0.013007, 0, 1.79995, -2.12682, 4.21812, -11.381 )
 script = ExtResource( 7 )
 input = 3
 
@@ -222,8 +224,7 @@ instrument = ExtResource( 21 )
 OCTAVES = [ 3, 4, 5, 6 ]
 
 [node name="Trumpet" parent="Instruments" instance=ExtResource( 22 )]
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 7.97913, 3.27, 4.68478 )
+transform = Transform( 0.754537, 0.656258, 0, -0.656258, 0.754537, 0, 0, 0, 1, 8.1045, 1.2952, -0.516942 )
 script = ExtResource( 7 )
 input = 8
 
@@ -232,8 +233,7 @@ instrument = ExtResource( 23 )
 OCTAVES = [ 3, 4, 5 ]
 
 [node name="Xylophone" parent="Instruments" instance=ExtResource( 24 )]
-editor/display_folded = true
-transform = Transform( 0.0263315, -0.0539134, -2.35663e-09, 0, -2.62268e-09, 0.06, -0.0539134, -0.0263315, -1.15098e-09, 5.19922, 3.09187, 9.36634 )
+transform = Transform( 0.0263315, -0.0539134, -2.35663e-09, 0, -2.62268e-09, 0.06, -0.0539134, -0.0263315, -1.15098e-09, 5.455, 6.0844, 9.191 )
 script = ExtResource( 7 )
 input = 2
 
@@ -255,6 +255,7 @@ material/0 = SubResource( 10 )
 one_shot = true
 
 [node name="Lights" type="Spatial" parent="."]
+editor/display_folded = true
 script = ExtResource( 27 )
 
 [node name="DirectionalLight" type="OmniLight" parent="Lights"]
@@ -287,6 +288,7 @@ omni_range = 18.0
 [node name="Decorations" type="Spatial" parent="."]
 
 [node name="Lamps" type="Spatial" parent="Decorations"]
+editor/display_folded = true
 
 [node name="lamp1" type="MeshInstance" parent="Decorations/Lamps"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 15.43, -10 )
@@ -322,3 +324,44 @@ material/0 = SubResource( 13 )
 transform = Transform( -1, -8.74228e-08, -4.37114e-08, 4.37114e-08, 1.91069e-15, -1, 8.74228e-08, -1, 1.91069e-15, 1.24141, 8.55465, 14.4969 )
 mesh = SubResource( 15 )
 material/0 = null
+
+[node name="Amplifier" type="Spatial" parent="Decorations"]
+transform = Transform( -1.77817, 0, -0.669418, 0, 1.9, 0, 0.669418, 0, -1.77817, -9.06629, 2.09413, -11.1623 )
+
+[node name="Amplifier" parent="Decorations/Amplifier" instance=ExtResource( 30 )]
+
+[node name="Amplifier2" type="Spatial" parent="Decorations"]
+transform = Transform( -0.103425, 0, 1.89718, 0, 1.9, 0, -1.89718, 0, -0.103425, -0.128604, 2.09413, 4.03164 )
+
+[node name="Amplifier" parent="Decorations/Amplifier2" instance=ExtResource( 30 )]
+transform = Transform( 0.993855, 0, 0.110696, 0, 1, 0, -0.110696, 0, 0.993855, -3.03921, 0, 1.19209e-07 )
+
+[node name="Chair" type="Spatial" parent="Decorations"]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 2.78688, 0 )
+
+[node name="Chair" parent="Decorations/Chair" instance=ExtResource( 31 )]
+transform = Transform( -0.991237, 0, -0.132092, 0, 1, 0, 0.132092, 0, -0.991237, -69.0715, 0, -182.757 )
+
+[node name="Chair2" parent="Decorations/Chair" instance=ExtResource( 31 )]
+transform = Transform( -0.981595, 0, -0.190976, 0, 1, 0, 0.190976, 0, -0.981595, 63.5961, 0, 120.21 )
+
+[node name="Chair3" parent="Decorations/Chair" instance=ExtResource( 31 )]
+transform = Transform( 0.946991, 0, -0.321261, 0, 1, 0, 0.321261, 0, 0.946991, 139.62, 0, -249.874 )
+
+[node name="Table" type="Spatial" parent="Decorations"]
+transform = Transform( 0.0494617, 0, -0.00731735, 0, 0.05, 0, 0.00731735, 0, 0.0494617, -6.53555, 2.80393, -10.8164 )
+
+[node name="Scene Root" parent="Decorations/Table" instance=ExtResource( 32 )]
+transform = Transform( 0.992377, 0, 0.123247, 0, 1, 0, -0.123247, 0, 0.992377, 74.1259, 0, -29.3654 )
+
+[node name="Stool" type="Spatial" parent="Decorations"]
+transform = Transform( -0.0303944, 0, -0.59923, 0, 0.6, 0, 0.59923, 0, -0.0303944, -6.31505, 2.13155, 9.39638 )
+
+[node name="Stool" parent="Decorations/Stool" instance=ExtResource( 33 )]
+transform = Transform( 0.999974, 0, 0.00722613, 0, 1, 0, -0.00722613, 0, 0.999974, -1.90185, -0.0402641, -0.893026 )
+
+[node name="PianoStand" parent="Decorations" instance=ExtResource( 34 )]
+transform = Transform( 0.0566558, 0, -0.998394, 0, 1, 0, 0.998394, 0, 0.0566558, -5.69184, 2.52943, 12.197 )
+
+[node name="Vibraphone Stand" parent="Decorations" instance=ExtResource( 35 )]
+transform = Transform( 0.891394, 0, -0.45323, 0, 1, 0, 0.45323, 0, 0.891394, 5.50693, 3.354, 9.31052 )

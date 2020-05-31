@@ -5,7 +5,7 @@ export(PackedScene) var instrument: PackedScene
 
 var sampler: Sampler
 
-var currentBase: String
+var currentBase: String = ""
 var currentScale: int
 
 var musicTheory: MusicTheory
@@ -92,6 +92,9 @@ func _select_octave(last_note: String, next_note: String) -> int:
     return OCTAVES[randi()%OCTAVES.size()]
 
 func play_random_note(muffled: bool = false):
+  if (currentBase == ""):
+    return
+
   var r_note := _get_random_note()
   if r_note == last_note:
     repeat += 1
