@@ -1,6 +1,8 @@
 extends Node
 class_name Instrument
 
+signal triggered
+
 var body: RigidBody
 var timer: Timer
 var tween: Tween
@@ -17,6 +19,7 @@ var PLAYING_DELAY = 1.5
 
 var activated := false
 var collision_sound := true
+var triggered := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -40,6 +43,12 @@ func _ready():
 
 func _input(event):
   if activated && event.is_action_pressed(str(input)):
+    # Deactivate gravity the first time instrument is triggered
+    if !triggered:
+      deactivate_gravity()
+      triggered = true
+      emit_signal("triggered")
+    
     body.angular_velocity = Vector3(0,0,0)
     body.linear_velocity = Vector3(0,0,0)
     
@@ -82,6 +91,7 @@ func activate_gravity(time: float):
   tween.interpolate_property(body, "gravity_scale", 0, 1,
     time, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
   tween.start()
+  triggered = false
 
 func deactivate_gravity():
   if tween.is_active():

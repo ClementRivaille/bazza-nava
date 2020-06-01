@@ -12,8 +12,8 @@ extents = Vector3( 0.52, 0.65, 0.1 )
 [node name="GuitarElec" instance=ExtResource( 1 )]
 
 [node name="guitar-elec" parent="." index="0"]
+mass = 1.2
 physics_material_override = ExtResource( 2 )
-gravity_scale = 0.0
 contacts_reported = 1
 contact_monitor = true
 

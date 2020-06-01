@@ -49,7 +49,6 @@ func _input(event: InputEvent):
       conductor.start_song()
       finished = false
       get_tree().call_group("instrument", "set_activated", true)
-      get_tree().call_group("instrument", "deactivate_gravity")
       lights.turn_on()
       emit_signal("restart")
       
