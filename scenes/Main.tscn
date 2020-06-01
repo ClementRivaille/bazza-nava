@@ -159,7 +159,7 @@ size = 16.0
 [node name="Instruments" type="Spatial" parent="."]
 
 [node name="Contrabass" parent="Instruments" instance=ExtResource( 6 )]
-transform = Transform( -5.24537e-08, 0, -1.2, 0, 1.2, 0, 1.2, 0, -5.24537e-08, 7.61409, 3.46772, -7.9498 )
+transform = Transform( -5.24537e-08, 0, -1.2, 0, 1.2, 0, 1.2, 0, -5.24537e-08, 7.614, 3.418, -10.1719 )
 script = ExtResource( 7 )
 input = 6
 
@@ -169,7 +169,7 @@ instrument = ExtResource( 9 )
 OCTAVES = [ 2 ]
 
 [node name="Flute" parent="Instruments" instance=ExtResource( 10 )]
-transform = Transform( 0.0102403, -6.05376e-09, -0.069247, 0, -0.07, 6.11959e-09, -0.069247, -8.95223e-10, -0.0102403, -6.40609, 4.39627, -11.9183 )
+transform = Transform( 0.0102403, -6.05376e-09, -0.069247, 0, -0.07, 6.11959e-09, -0.069247, -8.95223e-10, -0.0102403, -6.28028, 4.30813, -11.8997 )
 script = ExtResource( 7 )
 input = 9
 
@@ -178,7 +178,7 @@ instrument = ExtResource( 11 )
 OCTAVES = [ 4, 5, 6 ]
 
 [node name="Guitar" parent="Instruments" instance=ExtResource( 12 )]
-transform = Transform( -0.0206528, -0.0130231, 0.0053721, 0, 0.00953337, 0.0231109, -0.0140876, 0.0190922, -0.00787564, 7.66247, 6.39709, -12.9273 )
+transform = Transform( -0.0235475, -0.00811215, 0.00216994, 0, 0.00646017, 0.0241509, -0.00839736, 0.0227477, -0.00608484, 5.36573, 6.668, -13.7697 )
 script = ExtResource( 7 )
 input = 4
 
@@ -187,7 +187,7 @@ instrument = ExtResource( 13 )
 OCTAVES = [ 2, 3, 4, 5 ]
 
 [node name="GuitarElec" parent="Instruments" instance=ExtResource( 14 )]
-transform = Transform( 0.996617, 0.082188, -3.59255e-09, 0, -4.37114e-08, -1, -0.082188, 0.996617, -4.35635e-08, 3.47302, 4.7, -10.2732 )
+transform = Transform( 0.948171, 0.313321, -0.0529357, -0.0921727, 0.111764, -0.989451, -0.3041, 0.943047, 0.134851, -8.038, 4.528, -9.497 )
 script = ExtResource( 7 )
 input = 5
 
@@ -206,7 +206,7 @@ OCTAVES = [ 2, 3, 4, 5 ]
 
 [node name="Saxophone" parent="Instruments" instance=ExtResource( 18 )]
 editor/display_folded = true
-transform = Transform( -4.80824e-08, 0, 1.1, 0, 1.1, 0, -1.1, 0, -4.80825e-08, 7.42666, 2.5, 9.3 )
+transform = Transform( -4.80825e-08, 0, 1.1, 0, 1.1, 0, -1.1, 0, -4.80825e-08, 2.27902, 2.456, 12.4058 )
 script = ExtResource( 7 )
 input = 7
 
@@ -215,7 +215,7 @@ instrument = ExtResource( 19 )
 OCTAVES = [ 2, 3 ]
 
 [node name="Synth" parent="Instruments" instance=ExtResource( 20 )]
-transform = Transform( 1.79995, 0, 0.013007, 0, 1.8, 0, -0.013007, 0, 1.79995, -2.12682, 4.21812, -11.381 )
+transform = Transform( 1.79995, 0, 0.013007, 0, 1.8, 0, -0.013007, 0, 1.79995, -2.13085, 4.17746, -11.9385 )
 script = ExtResource( 7 )
 input = 3
 
@@ -224,7 +224,7 @@ instrument = ExtResource( 21 )
 OCTAVES = [ 3, 4, 5, 6 ]
 
 [node name="Trumpet" parent="Instruments" instance=ExtResource( 22 )]
-transform = Transform( 0.754537, 0.656258, 0, -0.656258, 0.754537, 0, 0, 0, 1, 8.1045, 1.2952, -0.516942 )
+transform = Transform( 4.94959e-09, -0.499867, -0.866102, 1, 7.54979e-08, -3.78585e-08, 8.43131e-08, -0.866102, 0.499867, 6.04986, 4.08218, 11.3971 )
 script = ExtResource( 7 )
 input = 8
 
@@ -233,7 +233,7 @@ instrument = ExtResource( 23 )
 OCTAVES = [ 3, 4, 5 ]
 
 [node name="Xylophone" parent="Instruments" instance=ExtResource( 24 )]
-transform = Transform( 0.0263315, -0.0539134, -2.35663e-09, 0, -2.62268e-09, 0.06, -0.0539134, -0.0263315, -1.15098e-09, 5.455, 6.0844, 9.191 )
+transform = Transform( -0.000495255, 0.059998, 2.62259e-09, 0, -2.62268e-09, 0.06, 0.059998, 0.000495255, 2.16483e-11, 0.935587, 6.0844, 9.84099 )
 script = ExtResource( 7 )
 input = 2
 
@@ -329,12 +329,13 @@ material/0 = null
 transform = Transform( -1.77817, 0, -0.669418, 0, 1.9, 0, 0.669418, 0, -1.77817, -9.06629, 2.09413, -11.1623 )
 
 [node name="Amplifier" parent="Decorations/Amplifier" instance=ExtResource( 30 )]
+transform = Transform( 1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, -0.0147094, 0 )
 
 [node name="Amplifier2" type="Spatial" parent="Decorations"]
-transform = Transform( -0.103425, 0, 1.89718, 0, 1.9, 0, -1.89718, 0, -0.103425, -0.128604, 2.09413, 4.03164 )
+transform = Transform( -0.6454, 0, 1.78702, 0, 1.9, 0, -1.78702, 0, -0.6454, 5.08968, 2.06752, 11.7306 )
 
 [node name="Amplifier" parent="Decorations/Amplifier2" instance=ExtResource( 30 )]
-transform = Transform( 0.993855, 0, 0.110696, 0, 1, 0, -0.110696, 0, 0.993855, -3.03921, 0, 1.19209e-07 )
+transform = Transform( 1, 0, 0, 0, 0.999999, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Chair" type="Spatial" parent="Decorations"]
 transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 2.78688, 0 )
@@ -343,16 +344,16 @@ transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 2.78688, 0 )
 transform = Transform( -0.991237, 0, -0.132092, 0, 1, 0, 0.132092, 0, -0.991237, -69.0715, 0, -182.757 )
 
 [node name="Chair2" parent="Decorations/Chair" instance=ExtResource( 31 )]
-transform = Transform( -0.981595, 0, -0.190976, 0, 1, 0, 0.190976, 0, -0.981595, 63.5961, 0, 120.21 )
+transform = Transform( -0.814303, 0, -0.580441, 0, 1, 0, 0.580441, 0, -0.814303, 85.4286, 0, 126.862 )
 
 [node name="Chair3" parent="Decorations/Chair" instance=ExtResource( 31 )]
-transform = Transform( 0.946991, 0, -0.321261, 0, 1, 0, 0.321261, 0, 0.946991, 139.62, 0, -249.874 )
+transform = Transform( 0.946991, 0, -0.321261, 0, 1, 0, 0.321261, 0, 0.946991, 99.5185, 0, -247.268 )
 
 [node name="Table" type="Spatial" parent="Decorations"]
 transform = Transform( 0.0494617, 0, -0.00731735, 0, 0.05, 0, 0.00731735, 0, 0.0494617, -6.53555, 2.80393, -10.8164 )
 
 [node name="Scene Root" parent="Decorations/Table" instance=ExtResource( 32 )]
-transform = Transform( 0.992377, 0, 0.123247, 0, 1, 0, -0.123247, 0, 0.992377, 74.1259, 0, -29.3654 )
+transform = Transform( 0.992377, 0, 0.123247, 0, 1, 0, -0.123247, 0, 0.992377, 74.1259, -0.887005, -29.3654 )
 
 [node name="Stool" type="Spatial" parent="Decorations"]
 transform = Transform( -0.0303944, 0, -0.59923, 0, 0.6, 0, 0.59923, 0, -0.0303944, -6.31505, 2.13155, 9.39638 )
@@ -364,4 +365,4 @@ transform = Transform( 0.999974, 0, 0.00722613, 0, 1, 0, -0.00722613, 0, 0.99997
 transform = Transform( 0.0566558, 0, -0.998394, 0, 1, 0, 0.998394, 0, 0.0566558, -5.69184, 2.52943, 12.197 )
 
 [node name="Vibraphone Stand" parent="Decorations" instance=ExtResource( 35 )]
-transform = Transform( 0.891394, 0, -0.45323, 0, 1, 0, 0.45323, 0, 0.891394, 5.50693, 3.354, 9.31052 )
+transform = Transform( 0.999597, 0, -0.0283977, 0, 1, 0, 0.0283977, 0, 0.999597, 0.21101, 3.354, 9.68576 )

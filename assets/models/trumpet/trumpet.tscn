@@ -52,20 +52,21 @@ contacts_reported = 1
 contact_monitor = true
 
 [node name="trumpet" type="MeshInstance" parent="trumpet"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = null
 material/1 = null
 
 [node name="shape" type="CollisionShape" parent="trumpet"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0691817, -0.23021, 0.870621 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.23, 0.871 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="trumpet"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.120048, 0.198898, -2.66036 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.06, 0.199, -2.66 )
 shape = SubResource( 3 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="trumpet"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.130406, 0.216116, -1.82558 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.07, 0.216, -1.826 )
 shape = SubResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

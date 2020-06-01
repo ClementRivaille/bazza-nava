@@ -12,7 +12,8 @@ contacts_reported = 1
 contact_monitor = true
 
 [node name="sax" parent="sax" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
 material/0 = ExtResource( 3 )
 
 [node name="shape" parent="sax" index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.2 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2 )

@@ -13,3 +13,6 @@ contact_monitor = true
 
 [node name="flute" parent="flute" index="0"]
 material/0 = ExtResource( 3 )
+
+[node name="shape" parent="flute" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16141, 0, 0 )
