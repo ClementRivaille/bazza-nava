@@ -82,6 +82,7 @@ func _on_end():
   locked = true
   # Remove filter
   if (filter_on):
+    camera.projection = Camera.PROJECTION_PERSPECTIVE
     material.shader = null
     filter_on = false
     remove_audio_effects()
