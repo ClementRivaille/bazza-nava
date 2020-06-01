@@ -1,6 +1,7 @@
 extends Control
 class_name UI
 
+onready var loading : DynamicText = $Loading
 onready var press_start : DynamicText = $PressStart
 onready var rules : DynamicText = $Rules
 onready var rules_2 : DynamicText = $Rules2
@@ -23,6 +24,10 @@ func _ready():
   bounce_rule_timer.connect("timeout", self, "_show_bounce_rule")
   esc_display_timer.connect("timeout", self, "hide_quit")
   exit.connect("exit", self, "quit")
+  
+func game_loaded():
+  loading.hide()
+  press_start.display()
 
 func remove_start():
   press_start.hide()

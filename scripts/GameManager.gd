@@ -1,6 +1,7 @@
 extends Spatial
 class_name GameManager
 
+signal loaded
 signal start
 signal intro_end
 signal end
@@ -9,6 +10,7 @@ signal toggle_collision_sound
 
 onready var conductor: Conductor = $Conductor
 onready var camera: Camera = $Camera
+onready var loadingMaterialds: LoadingMaterials = $LoadingMaterials
 onready var lights: LightsManager = $Lights
 onready var timer: Timer = $Timer
 onready var tween: Tween = $Tween
@@ -24,6 +26,7 @@ func _ready():
   get_tree().call_group("instrument", "set_activated", false)
   conductor.connect("end_intro", self, "_on_intro_end")
   conductor.connect("end_song", self, "_on_song_end")
+  loadingMaterialds.connect("loading_ready", self, "_on_loaded")
 
 func _input(event: InputEvent):
   # Start screen
@@ -61,6 +64,8 @@ func _on_intro_end():
   # After intro, activate players
   get_tree().call_group("instrument", "set_activated", true)
   emit_signal("intro_end")
+  # clear materials for cache
+  loadingMaterialds.clear()
 
 func _on_song_end():
   # After intro, activate players
@@ -69,3 +74,6 @@ func _on_song_end():
   lights.fade_off(conductor.get_outro_time())
   finished = true
   emit_signal("end")
+  
+func _on_loaded():
+  emit_signal("loaded")

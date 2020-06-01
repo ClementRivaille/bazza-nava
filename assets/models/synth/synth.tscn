@@ -5,7 +5,9 @@
 
 [node name="Synth" instance=ExtResource( 1 )]
 
-[node name="Synthesizer" parent="." index="0"]
+[node name="Synthesizer" parent="." index="0" groups=[
+"heavy",
+]]
 mass = 1.5
 physics_material_override = ExtResource( 2 )
 contacts_reported = 1

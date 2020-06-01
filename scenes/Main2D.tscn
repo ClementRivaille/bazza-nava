@@ -66,7 +66,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 32 )
 
+[node name="Loading" parent="UI" instance=ExtResource( 33 )]
+text = "Loading…"
+fade_time = 0.01
+
 [node name="PressStart" parent="UI" instance=ExtResource( 33 )]
+modulate = Color( 1, 1, 1, 0 )
+display_on_start = false
 text = "Press Enter"
 blinking = true
 
@@ -162,6 +168,7 @@ one_shot = true
 [node name="Tween" type="Tween" parent="UI/Exit"]
 [connection signal="end" from="FiltersManager/Viewport/Main" to="UI" method="display_end"]
 [connection signal="intro_end" from="FiltersManager/Viewport/Main" to="UI" method="show_rules"]
+[connection signal="loaded" from="FiltersManager/Viewport/Main" to="UI" method="game_loaded"]
 [connection signal="restart" from="FiltersManager/Viewport/Main" to="UI" method="hide_end"]
 [connection signal="start" from="FiltersManager/Viewport/Main" to="UI" method="remove_start"]
 [connection signal="toggle_collision_sound" from="FiltersManager/Viewport/Main" to="UI" method="set_bouncing"]

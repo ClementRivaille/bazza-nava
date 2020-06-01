@@ -3,146 +3,148 @@
 [ext_resource path="res://assets/models/vibraphoneStand/vibStandMetal.tres" type="Material" id=1]
 [ext_resource path="res://assets/models/vibraphoneStand/vibStandWheels.tres" type="Material" id=2]
 
-[sub_resource type="PhysicsMaterial" id=11]
+[sub_resource type="PhysicsMaterial" id=1]
 rough = true
 
-[sub_resource type="CylinderMesh" id=1]
+[sub_resource type="CylinderMesh" id=2]
 top_radius = 0.15
 bottom_radius = 0.15
 height = 2.5
 
-[sub_resource type="CylinderShape" id=6]
+[sub_resource type="CylinderShape" id=3]
 radius = 0.15
 height = 2.5
 
-[sub_resource type="CylinderMesh" id=2]
+[sub_resource type="CylinderMesh" id=4]
 top_radius = 0.1
 bottom_radius = 0.1
 height = 8.0
 
-[sub_resource type="CylinderShape" id=7]
+[sub_resource type="CylinderShape" id=5]
 radius = 0.1
 height = 8.0
 
-[sub_resource type="CubeMesh" id=3]
+[sub_resource type="CubeMesh" id=6]
 size = Vector3( 0.4, 5, 0.15 )
 
-[sub_resource type="BoxShape" id=8]
+[sub_resource type="BoxShape" id=7]
 extents = Vector3( 0.2, 2.5, 0.075 )
 
-[sub_resource type="CubeMesh" id=4]
+[sub_resource type="CubeMesh" id=8]
 size = Vector3( 0.5, 0.2, 8 )
 
 [sub_resource type="BoxShape" id=9]
 extents = Vector3( 0.25, 0.1, 4 )
 
-[sub_resource type="CylinderMesh" id=5]
+[sub_resource type="CylinderMesh" id=10]
 top_radius = 0.2
 bottom_radius = 0.2
 height = 0.2
 
-[sub_resource type="CylinderShape" id=10]
+[sub_resource type="CylinderShape" id=11]
 radius = 0.2
 height = 0.2
 
 [node name="Vibraphone Stand" type="Spatial"]
 
-[node name="RigidBody" type="RigidBody" parent="."]
-physics_material_override = SubResource( 11 )
+[node name="RigidBody" type="RigidBody" parent="." groups=[
+"heavy",
+]]
+physics_material_override = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="RigidBody"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 2.64525, 4 )
-mesh = SubResource( 1 )
+mesh = SubResource( 2 )
 material/0 = ExtResource( 1 )
 
 [node name="Shape" type="CollisionShape" parent="RigidBody"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 2.64525, 4 )
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 
 [node name="Shape2" type="CollisionShape" parent="RigidBody"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 2.64525, -4 )
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 
 [node name="Shape3" type="CollisionShape" parent="RigidBody"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -2.35475, -4 )
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 
 [node name="Shape4" type="CollisionShape" parent="RigidBody"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -2.35475, 4 )
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 
 [node name="MeshInstance3" type="MeshInstance" parent="RigidBody"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -2.35475, 4 )
-mesh = SubResource( 1 )
+mesh = SubResource( 2 )
 material/0 = ExtResource( 1 )
 
 [node name="MeshInstance4" type="MeshInstance" parent="RigidBody"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -2.35475, -4 )
-mesh = SubResource( 1 )
+mesh = SubResource( 2 )
 material/0 = ExtResource( 1 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="RigidBody"]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 2.64525, -4 )
-mesh = SubResource( 1 )
+mesh = SubResource( 2 )
 material/0 = ExtResource( 1 )
 
 [node name="MeshInstance7" type="MeshInstance" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.8, 2.64525, 0 )
-mesh = SubResource( 2 )
+mesh = SubResource( 4 )
 material/0 = ExtResource( 1 )
 
 [node name="Shape8" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.8, 2.64525, 0 )
-shape = SubResource( 7 )
+shape = SubResource( 5 )
 
 [node name="Shape9" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.8, 2.64525, 0 )
-shape = SubResource( 7 )
+shape = SubResource( 5 )
 
 [node name="MeshInstance8" type="MeshInstance" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.8, 2.64525, 0 )
-mesh = SubResource( 2 )
+mesh = SubResource( 4 )
 material/0 = ExtResource( 1 )
 
 [node name="MeshInstance9" type="MeshInstance" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.14525, -4 )
-mesh = SubResource( 3 )
+mesh = SubResource( 6 )
 material/0 = ExtResource( 1 )
 
 [node name="Shape10" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.14525, -4 )
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="Shape11" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.14525, 4 )
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="Shape12" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.14525, 4 )
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="Shape13" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.14525, -4 )
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="MeshInstance10" type="MeshInstance" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.14525, -4 )
-mesh = SubResource( 3 )
+mesh = SubResource( 6 )
 material/0 = ExtResource( 1 )
 
 [node name="MeshInstance11" type="MeshInstance" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.14525, 4 )
-mesh = SubResource( 3 )
+mesh = SubResource( 6 )
 material/0 = ExtResource( 1 )
 
 [node name="MeshInstance12" type="MeshInstance" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0.14525, 4 )
-mesh = SubResource( 3 )
+mesh = SubResource( 6 )
 material/0 = ExtResource( 1 )
 
 [node name="MeshInstance5" type="MeshInstance" parent="RigidBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.35475, 0 )
-mesh = SubResource( 4 )
+mesh = SubResource( 8 )
 material/0 = ExtResource( 1 )
 
 [node name="Shape14" type="CollisionShape" parent="RigidBody"]
@@ -151,36 +153,36 @@ shape = SubResource( 9 )
 
 [node name="MeshInstance6" type="MeshInstance" parent="RigidBody"]
 transform = Transform( 0.965734, 0.259533, -1.13446e-08, 0, -4.37114e-08, -1, -0.259533, 0.965734, -4.22136e-08, 1, -2.69475, -4 )
-mesh = SubResource( 5 )
+mesh = SubResource( 10 )
 material/0 = ExtResource( 2 )
 
 [node name="Shape15" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 0.965734, 0.259533, -1.13446e-08, 0, -4.37114e-08, -1, -0.259533, 0.965734, -4.22136e-08, 1, -2.69475, -4 )
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 
 [node name="MeshInstance13" type="MeshInstance" parent="RigidBody"]
 transform = Transform( 0.956326, -0.292301, 1.27769e-08, 0, -4.37114e-08, -1, 0.292301, 0.956326, -4.18024e-08, -1, -2.69475, -4 )
-mesh = SubResource( 5 )
+mesh = SubResource( 10 )
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance16" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 0.956326, -0.292301, 1.27769e-08, 0, -4.37114e-08, -1, 0.292301, 0.956326, -4.18024e-08, -1, -2.69475, -4 )
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 
 [node name="MeshInstance14" type="MeshInstance" parent="RigidBody"]
 transform = Transform( 0.968044, -0.250782, 1.0962e-08, 0, -4.37114e-08, -1, 0.250782, 0.968044, -4.23145e-08, -1, -2.69475, 4 )
-mesh = SubResource( 5 )
+mesh = SubResource( 10 )
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance17" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 0.968044, -0.250782, 1.0962e-08, 0, -4.37114e-08, -1, 0.250782, 0.968044, -4.23145e-08, -1, -2.69475, 4 )
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 
 [node name="MeshInstance15" type="MeshInstance" parent="RigidBody"]
 transform = Transform( 0.932001, -0.362456, 1.58435e-08, 0, -4.37114e-08, -1, 0.362456, 0.932001, -4.07391e-08, 1, -2.69475, 4 )
-mesh = SubResource( 5 )
+mesh = SubResource( 10 )
 material/0 = ExtResource( 2 )
 
 [node name="MeshInstance18" type="CollisionShape" parent="RigidBody"]
 transform = Transform( 0.932001, -0.362456, 1.58435e-08, 0, -4.37114e-08, -1, 0.362456, 0.932001, -4.07391e-08, 1, -2.69475, 4 )
-shape = SubResource( 10 )
+shape = SubResource( 11 )
