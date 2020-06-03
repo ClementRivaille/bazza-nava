@@ -1,7 +1,7 @@
 [gd_scene load_steps=28 format=2]
 
-[ext_resource path="res://addons/SimpleSampler/sampler.gd" type="Script" id=1]
-[ext_resource path="res://addons/SimpleSampler/sampler_icon.png" type="Texture" id=2]
+[ext_resource path="res://addons/SimpleSampler/multisampler.gd" type="Script" id=1]
+[ext_resource path="res://addons/SimpleSampler/multisampler_icon.png" type="Texture" id=2]
 [ext_resource path="res://addons/SimpleSampler/sample_resource.gd" type="Script" id=3]
 [ext_resource path="res://assets/sounds/organ/C3L.wav" type="AudioStream" id=4]
 [ext_resource path="res://assets/sounds/organ/C4L.wav" type="AudioStream" id=5]
@@ -98,3 +98,4 @@ __meta__ = {
 samples = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ]
 sustain = 0.3
 release = 0.1
+max_notes = 3
