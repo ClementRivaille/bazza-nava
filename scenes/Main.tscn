@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://scripts/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Conductor.tscn" type="PackedScene" id=2]
@@ -36,6 +36,7 @@
 [ext_resource path="res://assets/models/PianoStand/PianoStand.tscn" type="PackedScene" id=34]
 [ext_resource path="res://assets/models/vibraphoneStand/Vibraphone Stand.tscn" type="PackedScene" id=35]
 [ext_resource path="res://scenes/LoadingMaterials.tscn" type="PackedScene" id=36]
+[ext_resource path="res://scripts/OOB.gd" type="Script" id=37]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 30, 1.1, 30 )
@@ -87,19 +88,29 @@ albedo_texture = ExtResource( 29 )
 material = SubResource( 14 )
 size = Vector2( 7, 5 )
 
+[sub_resource type="BoxShape" id=16]
+extents = Vector3( 30, 10, 30 )
+
+[sub_resource type="BoxShape" id=17]
+extents = Vector3( 20, 30, 30 )
+
+[sub_resource type="BoxShape" id=18]
+extents = Vector3( 30, 30, 20 )
+
 [node name="Main" type="Spatial"]
 script = ExtResource( 1 )
 
 [node name="Conductor" parent="." instance=ExtResource( 2 )]
 
 [node name="Walls" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="Floor" type="StaticBody" parent="Walls"]
 
 [node name="MeshInstance" type="MeshInstance" parent="Walls/Floor" groups=[
 "heavy",
 ]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.021, -0.085, 0.024 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.085, 0 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 3 )
 
@@ -160,6 +171,7 @@ fov = 45.0
 size = 16.0
 
 [node name="Instruments" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="Contrabass" parent="Instruments" instance=ExtResource( 6 )]
 transform = Transform( -5.24537e-08, 0, -1.2, 0, 1.2, 0, 1.2, 0, -5.24537e-08, 7.614, 3.418, -10.1719 )
@@ -379,3 +391,33 @@ transform = Transform( 0.999597, 0, -0.0283977, 0, 1, 0, 0.0283977, 0, 0.999597,
 
 [node name="LoadingMaterials" parent="." instance=ExtResource( 36 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.00044, 6.93221, 0 )
+
+[node name="OOB" type="Area" parent="."]
+script = ExtResource( 37 )
+
+[node name="CollisionShape" type="CollisionShape" parent="OOB"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, 0 )
+shape = SubResource( 16 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="OOB"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20, 0 )
+shape = SubResource( 16 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="OOB"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 7.5, 0 )
+shape = SubResource( 17 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="OOB"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 7.5, 0 )
+shape = SubResource( 17 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="OOB"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, 40 )
+shape = SubResource( 18 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="OOB"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5, -40 )
+shape = SubResource( 18 )
+
+[node name="BackupPoint" type="Spatial" parent="OOB"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28541, 6.1351, 0 )
