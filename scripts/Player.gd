@@ -157,4 +157,5 @@ func play_single_note(muffled: bool = false):
   # Set note index and octave as previous
   last_note = r_note
   last_octave = octave
-  notes_in_chord.push_front(r_note)
+  if (chord):
+    notes_in_chord.push_front(r_note)
