@@ -1,4 +1,4 @@
-#Bazza Nava
+# Bazza Nava
 
 Bazza Nava is a musical game made with Godot. It uses samplers and music theory to create random melodies over a song. You can play it [on itch.io](https://itooh.itch.io/bazza-nava).
 
@@ -13,7 +13,7 @@ Of course, if you want to use them in your own project, don't forget to credit t
 ### Models
 
 * [Synthesizer Yamaha PSR-E343 by Sander_Alek](https://www.turbosquid.com/FullPreview/Index.cfm/ID/1036346)
-* [Guitar LowPoly by foad3D](http://(https://free3d.com/3d-model/guitarlowpoly-936885.html)
+* [Guitar LowPoly by foad3D](https://free3d.com/3d-model/guitarlowpoly-936885.html)
 * [Xylophone V1 by printable_models](https://free3d.com/fr/3d-model/xylophone-v1--607311.html)
 * [Saxophone V1 by printable_models](https://free3d.com/3d-model/saxophone-v1--94337.html)
 * [Flute V04 by printable_models](https://free3d.com/3d-model/flute-v04--879181.html)
