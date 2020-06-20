@@ -1,5 +1,5 @@
 extends Node
-class_name MusicTheory
+# class_name MusicTheory
 
 enum Scale {
   MAJOR = 0,

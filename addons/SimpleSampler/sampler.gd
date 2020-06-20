@@ -20,14 +20,16 @@ func _ready():
     sample.initValue(calculator)
   samples.sort_custom(self, "_compare_samples")
   
-  # Create a tween
+  # Create tween & timer for sustain and release
   tween = Tween.new()
   add_child(tween)
   timer = Timer.new()
   add_child(timer)
-  timer.wait_time = sustain
-  timer.one_shot = true;
-  timer.connect("timeout", self, "end_sustain")
+  # Initialize with sustain
+  if sustain > 0:
+    timer.wait_time = sustain
+    timer.one_shot = true;
+    timer.connect("timeout", self, "_end_sustain")
 
 func _compare_samples(a: NoteSample, b: NoteSample):
   return a.value < b.value
@@ -57,14 +59,14 @@ func play_note(note: String, octave: int = 4):
   # Set pitch relatively to sample
   pitch_scale = pow(2, (note_val - sample.value) / 12.0)
 
-  reset_envelope()
+  _reset_envelope()
   play(0.0)
   
   # If sustain is set, plan a stop
   if (sustain > 0):
     timer.start()
     
-func end_sustain():
+func _end_sustain():
   if playing:
     if release <= 0:
       stop()
@@ -72,25 +74,29 @@ func end_sustain():
       tween.interpolate_property(self, "volume_db",
         max_volume, -50,
         release, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
-      tween.connect("tween_completed", self, "end_release")
+      tween.connect("tween_completed", self, "_end_release")
       in_release = true
       tween.start()
     
-func end_release(_object: Object, _path: NodePath):
+func _end_release(_object: Object, _path: NodePath):
   stop()
   in_release = false
-  tween.disconnect("tween_completed", self, "end_release")
-  reset_envelope()
+  tween.disconnect("tween_completed", self, "_end_release")
+  _reset_envelope()
 
-func reset_envelope():
+# Reinitialize envelope tween & timer to prepare for the next note
+func _reset_envelope():
   if !timer.is_stopped():
     timer.stop()
   if in_release:
+    # During or after release, stop & disconnect tween
     tween.remove_all()
-    tween.disconnect("tween_completed", self, "end_release")
+    tween.disconnect("tween_completed", self, "_end_release")
     in_release = false
     
+  # Stop sound
   if playing:
     stop()
 
+  # Reset volume
   volume_db = max_volume

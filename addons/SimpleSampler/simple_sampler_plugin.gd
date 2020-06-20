@@ -17,7 +17,7 @@ func _enter_tree():
   )
   add_custom_type(
     "Multisampler",
-    "AudioStreamPlayer",
+    "Sampler",
     preload("multisampler.gd"),
     preload("multisampler_icon.png")
   )

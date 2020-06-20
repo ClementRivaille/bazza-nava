@@ -1,9 +1,5 @@
-extends AudioStreamPlayer
+extends Sampler
 class_name Multisampler
-
-export(Array, AudioStreamSample) var samples: Array
-export(float) var sustain := -1.0
-export(float) var release := -1.0
 
 export(int) var max_notes:= 1
 
