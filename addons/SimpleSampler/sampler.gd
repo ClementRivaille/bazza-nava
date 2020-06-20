@@ -65,6 +65,11 @@ func play_note(note: String, octave: int = 4):
   # If sustain is set, plan a stop
   if (sustain > 0):
     timer.start()
+
+# Stop the note with a release
+func release():
+  if playing:
+    _end_sustain()
     
 func _end_sustain():
   if playing:

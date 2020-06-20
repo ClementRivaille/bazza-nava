@@ -1,3 +1,6 @@
+// Based on pixelated noise (pattern3) by udart
+// https://www.shadertoy.com/view/4d3Szj
+
 shader_type canvas_item;
 
 vec4 a1(float n, vec2 p, sampler2D channel) {

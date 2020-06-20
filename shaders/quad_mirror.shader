@@ -1,3 +1,6 @@
+// Based on Simple Quad Mirror Effect by hunter
+// https://www.shadertoy.com/view/XdG3zw
+
 shader_type canvas_item;
 
 mat4 contrastMatrix( float contrast )

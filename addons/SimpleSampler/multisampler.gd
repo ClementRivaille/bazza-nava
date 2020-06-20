@@ -21,6 +21,7 @@ func _ready():
     samplers.append(sampler)
 
 func play_note(note: String, octave: int = 4):
+  # Call one of the sampler to play the note
   var sampler: Sampler = samplers[next_available]
   sampler.play_note(note, octave)
   next_available = (next_available + 1) % max_notes

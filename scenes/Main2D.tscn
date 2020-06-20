@@ -41,6 +41,9 @@
 [node name="Node2D" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="FiltersManager" type="ViewportContainer" parent="."]
 material = SubResource( 1 )
@@ -49,6 +52,9 @@ anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 250, 990 )
 stretch = true
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 shaders = [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ]
 orthogonal = [ 2, 6 ]
 audio_effects = [ [ ExtResource( 11 ) ], [ ExtResource( 12 ) ], [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ], [ ExtResource( 16 ), ExtResource( 17 ) ], [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ], [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ], [ ExtResource( 24 ), ExtResource( 25 ) ], [ ExtResource( 26 ) ], [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ] ]
@@ -67,13 +73,16 @@ anchor_bottom = 1.0
 script = ExtResource( 32 )
 
 [node name="Loading" parent="UI" instance=ExtResource( 33 )]
+display_on_start = true
 text = "Loading…"
 fade_time = 0.01
+blinking = false
 
 [node name="PressStart" parent="UI" instance=ExtResource( 33 )]
 modulate = Color( 1, 1, 1, 0 )
 display_on_start = false
 text = "Press Enter"
+fade_time = 0.5
 blinking = true
 
 [node name="Rules" parent="UI" instance=ExtResource( 33 )]
@@ -85,6 +94,7 @@ rect_pivot_offset = Vector2( 960, 0 )
 display_on_start = false
 text = "Use keys from 1 to 9 to play the instruments"
 fade_time = 1.2
+blinking = false
 
 [node name="Rules2" parent="UI" instance=ExtResource( 33 )]
 modulate = Color( 1, 1, 1, 0 )
@@ -95,6 +105,7 @@ rect_pivot_offset = Vector2( 960, 0 )
 display_on_start = false
 text = "You can use Space to toggle bouncing sounds"
 fade_time = 1.2
+blinking = false
 
 [node name="Quit" parent="UI" instance=ExtResource( 33 )]
 modulate = Color( 1, 1, 1, 0 )
@@ -104,6 +115,7 @@ anchor_bottom = 0.3
 display_on_start = false
 text = "Hold ESC to quit"
 fade_time = 0.2
+blinking = false
 
 [node name="Restart" parent="UI" instance=ExtResource( 33 )]
 modulate = Color( 1, 1, 1, 0 )
@@ -112,6 +124,7 @@ margin_bottom = 60.0
 display_on_start = false
 text = "Press Enter to play again"
 fade_time = 3.0
+blinking = false
 
 [node name="Bouncing" parent="UI" instance=ExtResource( 33 )]
 modulate = Color( 1, 1, 1, 0 )
@@ -124,6 +137,7 @@ margin_top = 10.0
 display_on_start = false
 text = "Bouncing sounds disabled"
 fade_time = 0.1
+blinking = false
 
 [node name="RulesTimer" type="Timer" parent="UI"]
 wait_time = 5.0

@@ -25,17 +25,20 @@ var note_values := {
   "Cb": -1
 }
 
+# Return the number value of a note from its name and octave (where C0 is 0)
 func get_note_value(tone: String, octave: int = 4) -> int:
   var value: int = note_values[tone]
   if value != null:
     return value + 12 * octave
   return 0
 
+# Return the name of a note from its value
 func get_note_name(value: int) -> String:
   var notes := note_values.keys()
   var values := note_values.values()
   var index: int = values.find(value % 12)
   return notes[index]
 
+# Return the octave of a note from its value
 func get_note_octave(value: int) -> int:
   return value / 12
